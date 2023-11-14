@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trading_app/gen/colors.gen.dart';
 import 'package:trading_app/modules/landing_page/onboarding.dart';
+import 'package:trading_app/modules/login/view/login_page.dart';
 
 import '../../gen/assets.gen.dart';
 
@@ -71,7 +72,12 @@ class LandingPage extends StatelessWidget {
                   const Text('Already have an account?'),
                   TextButton(
                     onPressed: () {
-                      // Aksi yang dijalankan saat tombol "Login" ditekan
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const LoginPage(),
+                        ),
+                      );
                     },
                     child: const Text(
                       ' Login',

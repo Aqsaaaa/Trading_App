@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trading_app/modules/landing_page/landing_page.dart';
+import 'package:trading_app/modules/login/view/login_page.dart';
 
 import 'modules/landing_page/onboarding.dart';
 
@@ -16,6 +17,7 @@ class MainApp extends StatelessWidget {
       home: const LandingPage(),
       routes: {
         Onbording.tag: (context) => const Onbording(),
+        LoginPage.tag: (context) => const LoginPage(),
         // other routes
       },
     );
