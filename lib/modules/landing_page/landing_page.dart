@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trading_app/gen/colors.gen.dart';
+import 'package:trading_app/modules/landing_page/onboarding.dart';
 
 import '../../gen/assets.gen.dart';
 
@@ -45,7 +46,9 @@ class LandingPage extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushReplacementNamed(Onbording.tag);
+                  },
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.all(15),
                     backgroundColor: ColorName.blue,
