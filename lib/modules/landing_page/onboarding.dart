@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trading_app/modules/landing_page/content_slide.dart';
-import 'package:trading_app/modules/landing_page/landing_page.dart';
+import 'package:trading_app/modules/register/view/register_page.dart';
 
 import '../../gen/colors.gen.dart';
 
@@ -117,7 +117,7 @@ class _OnbordingState extends State<Onbording> {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (_) => const LandingPage(),
+                            builder: (_) => const RegisterPage(),
                           ),
                         );
                       }
