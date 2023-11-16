@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../charts/view/charts_page.dart';
+import '../home/view/home_page.dart';
+import '../signal/view/signal_page.dart';
+
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});
 
@@ -10,19 +14,15 @@ class BottomBar extends StatefulWidget {
 
 class _BottomBarState extends State<BottomBar> {
   int _currentIndex = 0;
-
   final List<Widget> _pages = [
-    // FirstPage(),
-    // SecondPage(),
-    // ThirdPage(),
+    const HomePage(),
+    const SignalPage(),
+    const ChartsPage()
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Bottom Navbar Example'),
-      ),
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
@@ -34,23 +34,15 @@ class _BottomBarState extends State<BottomBar> {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: 'Page 1',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
-            label: 'All Chart',
+            label: 'Page 2',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'Display',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Signal',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Help Desk',
+            label: 'Page 3',
           ),
         ],
       ),

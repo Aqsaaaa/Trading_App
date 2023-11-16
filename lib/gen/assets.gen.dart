@@ -14,15 +14,39 @@ import 'package:flutter/services.dart';
 class $AssetsIconGen {
   const $AssetsIconGen();
 
+  /// File path: assets/icon/coin.svg
+  SvgGenImage get coin => const SvgGenImage('assets/icon/coin.svg');
+
+  /// File path: assets/icon/creditcard.svg
+  SvgGenImage get creditcard => const SvgGenImage('assets/icon/creditcard.svg');
+
   /// File path: assets/icon/google.svg
   SvgGenImage get google => const SvgGenImage('assets/icon/google.svg');
 
+  /// File path: assets/icon/notification.svg
+  SvgGenImage get notification =>
+      const SvgGenImage('assets/icon/notification.svg');
+
+  /// File path: assets/icon/wallet.svg
+  SvgGenImage get wallet => const SvgGenImage('assets/icon/wallet.svg');
+
   /// List of all assets
-  List<SvgGenImage> get values => [google];
+  List<SvgGenImage> get values =>
+      [coin, creditcard, google, notification, wallet];
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
+
+  /// File path: assets/images/broker display.png
+  AssetGenImage get brokerDisplay =>
+      const AssetGenImage('assets/images/broker display.png');
+
+  /// File path: assets/images/broker.png
+  AssetGenImage get broker => const AssetGenImage('assets/images/broker.png');
+
+  /// File path: assets/images/chart.png
+  AssetGenImage get chart => const AssetGenImage('assets/images/chart.png');
 
   /// File path: assets/images/landing1.png
   AssetGenImage get landing1 =>
@@ -40,8 +64,24 @@ class $AssetsImagesGen {
   AssetGenImage get landing4 =>
       const AssetGenImage('assets/images/landing4.png');
 
+  /// File path: assets/images/prodile.png
+  AssetGenImage get prodile => const AssetGenImage('assets/images/prodile.png');
+
+  /// File path: assets/images/youtube.png
+  AssetGenImage get youtube => const AssetGenImage('assets/images/youtube.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [landing1, landing2, landing3, landing4];
+  List<AssetGenImage> get values => [
+        brokerDisplay,
+        broker,
+        chart,
+        landing1,
+        landing2,
+        landing3,
+        landing4,
+        prodile,
+        youtube
+      ];
 }
 
 class Assets {
