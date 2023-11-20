@@ -20,6 +20,9 @@ class $AssetsIconGen {
   /// File path: assets/icon/creditcard.svg
   SvgGenImage get creditcard => const SvgGenImage('assets/icon/creditcard.svg');
 
+  /// File path: assets/icon/download.svg
+  SvgGenImage get download => const SvgGenImage('assets/icon/download.svg');
+
   /// File path: assets/icon/google.svg
   SvgGenImage get google => const SvgGenImage('assets/icon/google.svg');
 
@@ -32,11 +35,15 @@ class $AssetsIconGen {
 
   /// List of all assets
   List<SvgGenImage> get values =>
-      [coin, creditcard, google, notification, wallet];
+      [coin, creditcard, download, google, notification, wallet];
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
+
+  /// File path: assets/images/background wallet.png
+  AssetGenImage get backgroundWallet =>
+      const AssetGenImage('assets/images/background wallet.png');
 
   /// File path: assets/images/broker display.png
   AssetGenImage get brokerDisplay =>
@@ -45,8 +52,8 @@ class $AssetsImagesGen {
   /// File path: assets/images/broker.png
   AssetGenImage get broker => const AssetGenImage('assets/images/broker.png');
 
-  /// File path: assets/images/chart.png
-  AssetGenImage get chart => const AssetGenImage('assets/images/chart.png');
+  /// File path: assets/images/charts.png
+  AssetGenImage get charts => const AssetGenImage('assets/images/charts.png');
 
   /// File path: assets/images/landing1.png
   AssetGenImage get landing1 =>
@@ -67,19 +74,25 @@ class $AssetsImagesGen {
   /// File path: assets/images/prodile.png
   AssetGenImage get prodile => const AssetGenImage('assets/images/prodile.png');
 
+  /// File path: assets/images/profile charts.png
+  AssetGenImage get profileCharts =>
+      const AssetGenImage('assets/images/profile charts.png');
+
   /// File path: assets/images/youtube.png
   AssetGenImage get youtube => const AssetGenImage('assets/images/youtube.png');
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        backgroundWallet,
         brokerDisplay,
         broker,
-        chart,
+        charts,
         landing1,
         landing2,
         landing3,
         landing4,
         prodile,
+        profileCharts,
         youtube
       ];
 }

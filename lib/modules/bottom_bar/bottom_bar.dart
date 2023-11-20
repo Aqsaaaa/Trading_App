@@ -16,8 +16,8 @@ class _BottomBarState extends State<BottomBar> {
   int _currentIndex = 0;
   final List<Widget> _pages = [
     const HomePage(),
+    const ChartsPage(),
     const SignalPage(),
-    const ChartsPage()
   ];
 
   @override
@@ -34,15 +34,15 @@ class _BottomBarState extends State<BottomBar> {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Page 1',
+            label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
-            label: 'Page 2',
+            label: 'All Charts',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'Page 3',
+            label: 'Displayed',
           ),
         ],
       ),

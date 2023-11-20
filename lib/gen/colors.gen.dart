@@ -13,6 +13,9 @@ import 'package:flutter/material.dart';
 class ColorName {
   ColorName._();
 
+  /// Color: #89c0f3
+  static const Color aqua = Color(0xFF89C0F3);
+
   /// Color: #1985E7
   static const Color blue = Color(0xFF1985E7);
 

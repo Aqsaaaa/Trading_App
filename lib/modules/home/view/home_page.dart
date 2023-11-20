@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:trading_app/gen/colors.gen.dart';
+import 'package:trading_app/modules/wallet/view/wallet_view.dart';
 
 import '../../../gen/assets.gen.dart';
 
@@ -81,42 +82,52 @@ class HomePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors
-                      .white, // Ganti dengan warna latar belakang yang diinginkan
-                  borderRadius: BorderRadius.circular(16.0),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 2,
-                      blurRadius: 5,
-                      offset:
-                          const Offset(0, 2), // pergeseran bayangan ke bawah
-                    ),
-                  ],
-                ),
-                padding: const EdgeInsets.all(16),
-                height: 80,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    _buildInfoItem(Assets.icon.wallet.svg(), 'Balance', '800'),
-                    const VerticalDivider(
-                      width: 5,
-                      thickness: 1,
-                      color: Colors.black,
-                    ),
-                    _buildInfoItem(
-                        Assets.icon.creditcard.svg(), 'Deposit', '500'),
-                    const VerticalDivider(
-                      width: 16,
-                      thickness: 1,
-                      color: Colors.black,
-                    ),
-                    _buildInfoItem(Assets.icon.coin.svg(), 'Earning', '300'),
-                  ],
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const WalletPage(),
+                      ));
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors
+                        .white, // Ganti dengan warna latar belakang yang diinginkan
+                    borderRadius: BorderRadius.circular(16.0),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 5,
+                        offset:
+                            const Offset(0, 2), // pergeseran bayangan ke bawah
+                      ),
+                    ],
+                  ),
+                  padding: const EdgeInsets.all(16),
+                  height: 80,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      _buildInfoItem(
+                          Assets.icon.wallet.svg(), 'Balance', '800'),
+                      const VerticalDivider(
+                        width: 5,
+                        thickness: 1,
+                        color: Colors.black,
+                      ),
+                      _buildInfoItem(
+                          Assets.icon.creditcard.svg(), 'Deposit', '500'),
+                      const VerticalDivider(
+                        width: 16,
+                        thickness: 1,
+                        color: Colors.black,
+                      ),
+                      _buildInfoItem(Assets.icon.coin.svg(), 'Earning', '300'),
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(height: 16),
@@ -174,19 +185,19 @@ class HomePage extends StatelessWidget {
                           Assets.images.prodile.image(),
                           'FX Power',
                           'Created by System (May 12,  2023)',
-                          Assets.images.chart.image(width: 250)),
+                          Assets.images.charts.image(width: 250)),
                       const SizedBox(width: 20),
                       _newUploadCharts(
                           Assets.images.prodile.image(),
                           'FX Power',
                           'Created by System (May 12,  2023)',
-                          Assets.images.chart.image(width: 250)),
+                          Assets.images.charts.image(width: 250)),
                       const SizedBox(width: 20),
                       _newUploadCharts(
                           Assets.images.prodile.image(),
                           'FX Power',
                           'Created by System (May 12,  2023)',
-                          Assets.images.chart.image(width: 250)),
+                          Assets.images.charts.image(width: 250)),
                     ],
                   ),
                 ),
