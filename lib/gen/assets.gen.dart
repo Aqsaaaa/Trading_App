@@ -14,6 +14,10 @@ import 'package:flutter/services.dart';
 class $AssetsIconGen {
   const $AssetsIconGen();
 
+  /// File path: assets/icon/checkcircle.svg
+  SvgGenImage get checkcircle =>
+      const SvgGenImage('assets/icon/checkcircle.svg');
+
   /// File path: assets/icon/coin.svg
   SvgGenImage get coin => const SvgGenImage('assets/icon/coin.svg');
 
@@ -35,7 +39,7 @@ class $AssetsIconGen {
 
   /// List of all assets
   List<SvgGenImage> get values =>
-      [coin, creditcard, download, google, notification, wallet];
+      [checkcircle, coin, creditcard, download, google, notification, wallet];
 }
 
 class $AssetsImagesGen {

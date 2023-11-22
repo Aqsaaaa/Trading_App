@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:trading_app/gen/colors.gen.dart';
-import 'package:trading_app/modules/wallet/view/wallet_view.dart';
+import 'package:trading_app/modules/wallet/view/wallet_page.dart';
 
 import '../../../gen/assets.gen.dart';
 

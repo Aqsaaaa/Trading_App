@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:trading_app/gen/colors.gen.dart';
+import 'package:trading_app/modules/wallet/view/history_transaction_page.dart';
 
 import '../../../gen/assets.gen.dart';
 import '../../bottom_bar/bottom_bar.dart';
@@ -194,10 +195,10 @@ class WalletPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     'History',
                     style: TextStyle(
                       fontSize: 20,
@@ -205,13 +206,23 @@ class WalletPage extends StatelessWidget {
                       color: Colors.black,
                     ),
                   ),
-                  SizedBox(height: 8),
-                  Text(
-                    'See All',
-                    style: TextStyle(
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.bold,
-                      color: ColorName.blue,
+                  const SizedBox(height: 8),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const HistoryTransactionPage(),
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      'See All',
+                      style: TextStyle(
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.bold,
+                        color: ColorName.blue,
+                      ),
                     ),
                   ),
                 ],
@@ -221,13 +232,10 @@ class WalletPage extends StatelessWidget {
                 children: [
                   _history(Assets.icon.creditcard.svg(color: ColorName.blue),
                       'Deposit', 'Tues, 24 March 2023', 'Rp 10.000.000'),
-                  const SizedBox(height: 20),
                   _history(Assets.icon.creditcard.svg(color: ColorName.blue),
                       'Deposit', 'Tues, 24 March 2023', 'Rp 10.000.000'),
-                  const SizedBox(height: 20),
                   _history(Assets.icon.creditcard.svg(color: ColorName.blue),
                       'Deposit', 'Tues, 24 March 2023', 'Rp 10.000.000'),
-                  const SizedBox(height: 20),
                 ],
               ),
             ],
@@ -273,6 +281,7 @@ Widget _history(SvgPicture icon, String title, String subtitle, String value) {
           Text(value),
         ],
       ),
+      const SizedBox(height: 20),
     ],
   );
 }
