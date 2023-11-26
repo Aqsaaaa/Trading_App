@@ -33,6 +33,7 @@ class HistoryTransactionPage extends StatelessWidget {
             },
           ),
           bottom: const TabBar(
+            isScrollable: true,
             tabs: [
               Tab(text: 'All'),
               Tab(text: 'Earning'),

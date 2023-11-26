@@ -14,6 +14,27 @@ import 'package:flutter/services.dart';
 class $AssetsIconGen {
   const $AssetsIconGen();
 
+  /// File path: assets/icon/BCA.svg
+  SvgGenImage get bca => const SvgGenImage('assets/icon/BCA.svg');
+
+  /// File path: assets/icon/BNI.svg
+  SvgGenImage get bni => const SvgGenImage('assets/icon/BNI.svg');
+
+  /// File path: assets/icon/CIMB.svg
+  SvgGenImage get cimb => const SvgGenImage('assets/icon/CIMB.svg');
+
+  /// File path: assets/icon/OVO.svg
+  SvgGenImage get ovo => const SvgGenImage('assets/icon/OVO.svg');
+
+  /// File path: assets/icon/PANEN.svg
+  SvgGenImage get panen => const SvgGenImage('assets/icon/PANEN.svg');
+
+  /// File path: assets/icon/all charts.svg
+  SvgGenImage get allCharts => const SvgGenImage('assets/icon/all charts.svg');
+
+  /// File path: assets/icon/bri.svg
+  SvgGenImage get bri => const SvgGenImage('assets/icon/bri.svg');
+
   /// File path: assets/icon/checkcircle.svg
   SvgGenImage get checkcircle =>
       const SvgGenImage('assets/icon/checkcircle.svg');
@@ -24,22 +45,60 @@ class $AssetsIconGen {
   /// File path: assets/icon/creditcard.svg
   SvgGenImage get creditcard => const SvgGenImage('assets/icon/creditcard.svg');
 
+  /// File path: assets/icon/displayed.svg
+  SvgGenImage get displayed => const SvgGenImage('assets/icon/displayed.svg');
+
   /// File path: assets/icon/download.svg
   SvgGenImage get download => const SvgGenImage('assets/icon/download.svg');
 
   /// File path: assets/icon/google.svg
   SvgGenImage get google => const SvgGenImage('assets/icon/google.svg');
 
+  /// File path: assets/icon/helpdesk.svg
+  SvgGenImage get helpdesk => const SvgGenImage('assets/icon/helpdesk.svg');
+
+  /// File path: assets/icon/home.svg
+  SvgGenImage get home => const SvgGenImage('assets/icon/home.svg');
+
   /// File path: assets/icon/notification.svg
   SvgGenImage get notification =>
       const SvgGenImage('assets/icon/notification.svg');
+
+  /// File path: assets/icon/signal.svg
+  SvgGenImage get signal => const SvgGenImage('assets/icon/signal.svg');
+
+  /// File path: assets/icon/star.svg
+  SvgGenImage get star => const SvgGenImage('assets/icon/star.svg');
+
+  /// File path: assets/icon/users.svg
+  SvgGenImage get users => const SvgGenImage('assets/icon/users.svg');
 
   /// File path: assets/icon/wallet.svg
   SvgGenImage get wallet => const SvgGenImage('assets/icon/wallet.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values =>
-      [checkcircle, coin, creditcard, download, google, notification, wallet];
+  List<SvgGenImage> get values => [
+        bca,
+        bni,
+        cimb,
+        ovo,
+        panen,
+        allCharts,
+        bri,
+        checkcircle,
+        coin,
+        creditcard,
+        displayed,
+        download,
+        google,
+        helpdesk,
+        home,
+        notification,
+        signal,
+        star,
+        users,
+        wallet
+      ];
 }
 
 class $AssetsImagesGen {

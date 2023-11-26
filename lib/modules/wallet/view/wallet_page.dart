@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:trading_app/gen/colors.gen.dart';
+import 'package:trading_app/modules/wallet/view/deposit_page.dart';
 import 'package:trading_app/modules/wallet/view/history_transaction_page.dart';
 
 import '../../../gen/assets.gen.dart';
@@ -33,7 +34,7 @@ class WalletPage extends StatelessWidget {
           },
         ),
         title: const Text(
-          'Fiinance',
+          'Finance',
           style: TextStyle(
             color: Colors.black,
             fontSize: 20,
@@ -58,16 +59,14 @@ class WalletPage extends StatelessWidget {
                 },
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Colors
-                        .blue, // Ganti dengan warna latar belakang yang diinginkan
+                    color: Colors.blue,
                     borderRadius: BorderRadius.circular(16.0),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.grey.withOpacity(0.5),
                         spreadRadius: 2,
                         blurRadius: 5,
-                        offset:
-                            const Offset(0, 2), // pergeseran bayangan ke bawah
+                        offset: const Offset(0, 2),
                       ),
                     ],
                   ),
@@ -96,7 +95,12 @@ class WalletPage extends StatelessWidget {
                           children: [
                             ElevatedButton(
                               onPressed: () {
-                                // Add the desired functionality here
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => const DepositPage(),
+                                  ),
+                                );
                               },
                               style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(
