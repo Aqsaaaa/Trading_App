@@ -51,6 +51,9 @@ class $AssetsIconGen {
   /// File path: assets/icon/download.svg
   SvgGenImage get download => const SvgGenImage('assets/icon/download.svg');
 
+  /// File path: assets/icon/edit.svg
+  SvgGenImage get edit => const SvgGenImage('assets/icon/edit.svg');
+
   /// File path: assets/icon/google.svg
   SvgGenImage get google => const SvgGenImage('assets/icon/google.svg');
 
@@ -60,15 +63,38 @@ class $AssetsIconGen {
   /// File path: assets/icon/home.svg
   SvgGenImage get home => const SvgGenImage('assets/icon/home.svg');
 
+  /// File path: assets/icon/infocircle.svg
+  SvgGenImage get infocircle => const SvgGenImage('assets/icon/infocircle.svg');
+
+  /// File path: assets/icon/lockoff.svg
+  SvgGenImage get lockoff => const SvgGenImage('assets/icon/lockoff.svg');
+
+  /// File path: assets/icon/login.svg
+  SvgGenImage get login => const SvgGenImage('assets/icon/login.svg');
+
   /// File path: assets/icon/notification.svg
   SvgGenImage get notification =>
       const SvgGenImage('assets/icon/notification.svg');
+
+  /// File path: assets/icon/pinpapercheck.svg
+  SvgGenImage get pinpapercheck =>
+      const SvgGenImage('assets/icon/pinpapercheck.svg');
 
   /// File path: assets/icon/signal.svg
   SvgGenImage get signal => const SvgGenImage('assets/icon/signal.svg');
 
   /// File path: assets/icon/star.svg
   SvgGenImage get star => const SvgGenImage('assets/icon/star.svg');
+
+  /// File path: assets/icon/user1.svg
+  SvgGenImage get user1 => const SvgGenImage('assets/icon/user1.svg');
+
+  /// File path: assets/icon/user2.svg
+  SvgGenImage get user2 => const SvgGenImage('assets/icon/user2.svg');
+
+  /// File path: assets/icon/userquestion.svg
+  SvgGenImage get userquestion =>
+      const SvgGenImage('assets/icon/userquestion.svg');
 
   /// File path: assets/icon/users.svg
   SvgGenImage get users => const SvgGenImage('assets/icon/users.svg');
@@ -90,12 +116,20 @@ class $AssetsIconGen {
         creditcard,
         displayed,
         download,
+        edit,
         google,
         helpdesk,
         home,
+        infocircle,
+        lockoff,
+        login,
         notification,
+        pinpapercheck,
         signal,
         star,
+        user1,
+        user2,
+        userquestion,
         users,
         wallet
       ];
@@ -103,6 +137,10 @@ class $AssetsIconGen {
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
+
+  /// File path: assets/images/Profile2.png
+  AssetGenImage get profile2 =>
+      const AssetGenImage('assets/images/Profile2.png');
 
   /// File path: assets/images/background wallet.png
   AssetGenImage get backgroundWallet =>
@@ -146,6 +184,7 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        profile2,
         backgroundWallet,
         brokerDisplay,
         broker,

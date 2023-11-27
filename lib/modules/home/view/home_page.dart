@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:trading_app/gen/colors.gen.dart';
+import 'package:trading_app/modules/profile/profile_page.dart';
 import 'package:trading_app/modules/wallet/view/wallet_page.dart';
 
 import '../../../gen/assets.gen.dart';
@@ -14,6 +15,7 @@ class HomePage extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(100.0),
         child: AppBar(
+          // leading: ,
           elevation: 0,
           backgroundColor: ColorName.white,
           automaticallyImplyLeading: false,
@@ -40,25 +42,34 @@ class HomePage extends StatelessWidget {
                             child: Assets.images.prodile.image(),
                           ),
                           const SizedBox(width: 8),
-                          const Column(
-                            children: [
-                              Text(
-                                'Hi, Welcome Back!',
-                                style: TextStyle(
-                                  fontSize: 16.0,
-                                  color: ColorName.white,
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => const ProfilePage(),
+                                  ));
+                            },
+                            child: const Column(
+                              children: [
+                                Text(
+                                  'Hi, Welcome Back!',
+                                  style: TextStyle(
+                                    fontSize: 16.0,
+                                    color: ColorName.white,
+                                  ),
                                 ),
-                              ),
-                              SizedBox(width: 8.0),
-                              Text(
-                                'Ahmad Solikin',
-                                style: TextStyle(
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.bold,
-                                  color: ColorName.white,
+                                SizedBox(width: 8.0),
+                                Text(
+                                  'Ahmad Solikin',
+                                  style: TextStyle(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: ColorName.white,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ],
                       ),
