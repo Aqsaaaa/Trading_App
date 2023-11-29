@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:trading_app/gen/colors.gen.dart';
 
-class MyProfile extends StatelessWidget {
-  const MyProfile({Key? key}) : super(key: key);
+class MyProfilePage extends StatelessWidget {
+  const MyProfilePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,4 @@
-part of '../my_charts_list.dart';
+part of '../my_charts_list_page.dart';
 
 class MychartsItemWidget extends StatelessWidget {
   final String type;

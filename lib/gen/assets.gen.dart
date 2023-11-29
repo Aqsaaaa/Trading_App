@@ -35,6 +35,9 @@ class $AssetsIconGen {
   /// File path: assets/icon/bri.svg
   SvgGenImage get bri => const SvgGenImage('assets/icon/bri.svg');
 
+  /// File path: assets/icon/camera.svg
+  SvgGenImage get camera => const SvgGenImage('assets/icon/camera.svg');
+
   /// File path: assets/icon/checkcircle.svg
   SvgGenImage get checkcircle =>
       const SvgGenImage('assets/icon/checkcircle.svg');
@@ -86,6 +89,9 @@ class $AssetsIconGen {
   /// File path: assets/icon/star.svg
   SvgGenImage get star => const SvgGenImage('assets/icon/star.svg');
 
+  /// File path: assets/icon/upload.svg
+  SvgGenImage get upload => const SvgGenImage('assets/icon/upload.svg');
+
   /// File path: assets/icon/user1.svg
   SvgGenImage get user1 => const SvgGenImage('assets/icon/user1.svg');
 
@@ -111,6 +117,7 @@ class $AssetsIconGen {
         panen,
         allCharts,
         bri,
+        camera,
         checkcircle,
         coin,
         creditcard,
@@ -127,6 +134,7 @@ class $AssetsIconGen {
         pinpapercheck,
         signal,
         star,
+        upload,
         user1,
         user2,
         userquestion,
@@ -155,6 +163,14 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/charts.png
   AssetGenImage get charts => const AssetGenImage('assets/images/charts.png');
+
+  /// File path: assets/images/example_photo.png
+  AssetGenImage get examplePhoto =>
+      const AssetGenImage('assets/images/example_photo.png');
+
+  /// File path: assets/images/example_selfie.png
+  AssetGenImage get exampleSelfie =>
+      const AssetGenImage('assets/images/example_selfie.png');
 
   /// File path: assets/images/landing1.png
   AssetGenImage get landing1 =>
@@ -189,6 +205,8 @@ class $AssetsImagesGen {
         brokerDisplay,
         broker,
         charts,
+        examplePhoto,
+        exampleSelfie,
         landing1,
         landing2,
         landing3,

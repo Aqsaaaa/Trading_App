@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:trading_app/gen/colors.gen.dart';
 
-class FormMyProfile extends StatelessWidget {
-  const FormMyProfile({Key? key}) : super(key: key);
+class ChangePasswordPage extends StatelessWidget {
+  const ChangePasswordPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +16,10 @@ class FormMyProfile extends StatelessWidget {
             Icons.arrow_back,
             color: Colors.black,
           ),
-          onPressed: () => context.go('/MyProfile'),
+          onPressed: () => context.go('/profile'),
         ),
         title: const Text(
-          'My Profile',
+          'Change Password',
           style: TextStyle(
             color: Colors.black,
             fontSize: 20,
@@ -32,114 +32,68 @@ class FormMyProfile extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
+          children: [
             const Text(
-              'Full Name',
+              'Current Password',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 4),
             SizedBox(
               height: 35,
               child: TextFormField(
+                obscureText: true,
+                keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  contentPadding: const EdgeInsets.all(8), // Add this line
+                  contentPadding: const EdgeInsets.all(8),
                 ),
-                initialValue: 'Ahmad Solikin',
               ),
             ),
             const SizedBox(height: 8),
             const Text(
-              'Username',
+              'New Password',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 4),
             SizedBox(
               height: 35,
               child: TextFormField(
+                obscureText: true,
+                keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  contentPadding: const EdgeInsets.all(8), // Add this line
+                  contentPadding: const EdgeInsets.all(8),
                 ),
-                initialValue: 'Solikinn',
-              ),
-            ),
-            const SizedBox(height: 8),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  'Gender',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 8),
-                SizedBox(
-                  child: DropdownButton<String>(
-                    value: 'Male',
-                    onChanged: (String? newValue) {
-                      // Add your logic here to handle the selected value
-                    },
-                    items: <String>[
-                      'Male',
-                      'Female'
-                    ] // Add more options here if needed
-                        .map<DropdownMenuItem<String>>((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value),
-                      );
-                    }).toList(),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 8),
-            const Text(
-              'Country',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 8),
-            SizedBox(
-              height: 35,
-              child: TextFormField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  contentPadding: const EdgeInsets.all(8), // Add this line
-                ),
-                initialValue: 'Indonesia',
               ),
             ),
             const SizedBox(height: 8),
             const Text(
-              'City',
+              'Confirm New password',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 4),
             SizedBox(
               height: 35,
               child: TextFormField(
+                obscureText: true,
+                keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  contentPadding: const EdgeInsets.all(8), // Add this line
+                  contentPadding: const EdgeInsets.all(8),
                 ),
-                initialValue: 'Jakarta',
               ),
             ),
             const SizedBox(height: 8),
             SizedBox(
-              width: double.infinity, // Add the width property here
+              width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {
-                  // Add your button action here
-                },
+                onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
                   backgroundColor: ColorName.blue,

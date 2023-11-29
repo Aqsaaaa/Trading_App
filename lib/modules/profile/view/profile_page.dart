@@ -220,26 +220,29 @@ class ProfilePage extends StatelessWidget {
                   color: ColorName.lightGrey,
                 ),
                 const SizedBox(height: 8),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Assets.icon.pinpapercheck.svg(),
-                        const SizedBox(width: 8),
-                        const Text(
-                          'Verifications',
-                          style: TextStyle(
-                            fontSize: 16,
+                GestureDetector(
+                  onTap: () => context.go('/Verification'),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Assets.icon.pinpapercheck.svg(),
+                          const SizedBox(width: 8),
+                          const Text(
+                            'Verifications',
+                            style: TextStyle(
+                              fontSize: 16,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    const Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      color: ColorName.lightGrey,
-                    ),
-                  ],
+                        ],
+                      ),
+                      const Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        color: ColorName.lightGrey,
+                      ),
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 8),
                 const Divider(

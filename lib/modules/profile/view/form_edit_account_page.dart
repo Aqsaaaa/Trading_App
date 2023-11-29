@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:trading_app/gen/colors.gen.dart';
 
-class MyAccount extends StatelessWidget {
-  const MyAccount({Key? key}) : super(key: key);
+class FormMyAccountPage extends StatelessWidget {
+  const FormMyAccountPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class MyAccount extends StatelessWidget {
             Icons.arrow_back,
             color: Colors.black,
           ),
-          onPressed: () => context.go('/profile'),
+          onPressed: () => context.go('/MyAccount'),
         ),
         title: const Text(
           'My Account',
@@ -38,28 +38,43 @@ class MyAccount extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 4),
-            const Text('ahmadsolikin@gmail.com'),
-            const Divider(
-              height: 20,
-              thickness: 1,
-              color: ColorName.lightGrey,
+            SizedBox(
+              height: 35,
+              child: TextFormField(
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  contentPadding: const EdgeInsets.all(8),
+                ),
+                initialValue: 'ahmadsolikin@gmail.com',
+              ),
             ),
+            const SizedBox(height: 8),
             const Text(
               'Mobile Phone',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 4),
-            const Text('0812345678'),
-            const Divider(
-              height: 20,
-              thickness: 1,
-              color: ColorName.lightGrey,
+            SizedBox(
+              height: 35,
+              child: TextFormField(
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  contentPadding: const EdgeInsets.all(8),
+                ),
+                initialValue: '0812345678',
+              ),
             ),
             const SizedBox(height: 8),
             SizedBox(
-              width: double.infinity, // Add the width property here
+              width: double.infinity,
               child: ElevatedButton(
-                onPressed: () => context.go('/FormMyAccount'),
+                onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
                   backgroundColor: ColorName.blue,
@@ -69,7 +84,7 @@ class MyAccount extends StatelessWidget {
                   ),
                 ),
                 child: const Text(
-                  'Change Personal Data',
+                  'Save Change',
                   style: TextStyle(
                     fontSize: 16,
                   ),

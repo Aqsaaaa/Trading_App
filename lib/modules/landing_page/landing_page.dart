@@ -16,7 +16,7 @@ class LandingPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Assets.images.landing1.image(width: 220),
+              Assets.images.landing1.image(width: 200),
               const SizedBox(height: 20),
               const Text(
                 'Welcome To',

@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:trading_app/modules/landing_page/landing_page.dart';
-import 'package:trading_app/modules/profile/view/my_charts_list.dart';
+import 'package:trading_app/modules/profile/view/my_charts_list_page.dart';
+import 'package:trading_app/modules/profile/view/verification_page.dart';
 import 'package:trading_app/modules/wallet/view/instruction/bri_page.dart';
 
 import 'modules/bottom_bar/bottom_bar.dart';
 import 'modules/landing_page/onboarding.dart';
 import 'modules/login/view/login_page.dart';
-import 'modules/profile/view/change_password.dart';
-import 'modules/profile/view/form_edit_account.dart';
-import 'modules/profile/view/form_edit_profile.dart';
-import 'modules/profile/view/my_account.dart';
-import 'modules/profile/view/my_profile.dart';
+import 'modules/profile/view/change_password_page.dart';
+import 'modules/profile/view/form_edit_account_page.dart';
+import 'modules/profile/view/form_edit_profile_page.dart';
+import 'modules/profile/view/my_account_page.dart';
+import 'modules/profile/view/my_profile_page.dart';
 import 'modules/profile/view/profile_page.dart';
 import 'modules/register/view/register_page.dart';
 import 'modules/register/view/verify_page.dart';
@@ -71,27 +72,31 @@ final GoRouter router = GoRouter(
     ),
     GoRoute(
       path: '/FormMyAccount',
-      builder: (context, state) => const FormMyAccount(),
+      builder: (context, state) => const FormMyAccountPage(),
     ),
     GoRoute(
       path: '/FormMyProfile',
-      builder: (context, state) => const FormMyProfile(),
+      builder: (context, state) => const FormMyProfilePage(),
     ),
     GoRoute(
       path: '/MyProfile',
-      builder: (context, state) => const MyProfile(),
+      builder: (context, state) => const MyProfilePage(),
     ),
     GoRoute(
       path: '/MyAccount',
-      builder: (context, state) => const MyAccount(),
+      builder: (context, state) => const MyAccountPage(),
     ),
     GoRoute(
       path: '/ChangePassword',
-      builder: (context, state) => const ChangePassword(),
+      builder: (context, state) => const ChangePasswordPage(),
     ),
     GoRoute(
       path: '/MyChartsList',
       builder: (context, state) => const MyChartsListPage(),
+    ),
+    GoRoute(
+      path: '/Verification',
+      builder: (context, state) => const VerificationPage(),
     ),
   ],
 );
