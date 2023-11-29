@@ -2,16 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:trading_app/gen/colors.gen.dart';
-import 'package:trading_app/modules/wallet/view/deposit_page.dart';
-import 'package:trading_app/modules/wallet/view/history_transaction_page.dart';
 
 import '../../../gen/assets.gen.dart';
-import '../../bottom_bar/bottom_bar.dart';
 
 class WalletPage extends StatelessWidget {
   const WalletPage({super.key});
-  static var tag = 'loggin-page';
 
   @override
   Widget build(BuildContext context) {
@@ -24,14 +21,7 @@ class WalletPage extends StatelessWidget {
             Icons.arrow_back,
             color: Colors.black,
           ),
-          onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (_) => const BottomBar(),
-              ),
-            );
-          },
+          onPressed: () => context.go('/Bottombar'),
         ),
         title: const Text(
           'Finance',
@@ -50,13 +40,7 @@ class WalletPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               GestureDetector(
-                onTap: () {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => const WalletPage(),
-                      ));
-                },
+                onTap: () => context.go('/wallet'),
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.blue,
@@ -94,14 +78,7 @@ class WalletPage extends StatelessWidget {
                         Row(
                           children: [
                             ElevatedButton(
-                              onPressed: () {
-                                Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (_) => const DepositPage(),
-                                  ),
-                                );
-                              },
+                              onPressed: () => context.go('/Deposit'),
                               style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(8),
@@ -212,14 +189,7 @@ class WalletPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   GestureDetector(
-                    onTap: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const HistoryTransactionPage(),
-                        ),
-                      );
-                    },
+                    onTap: () => context.go('/History'),
                     child: const Text(
                       'See All',
                       style: TextStyle(

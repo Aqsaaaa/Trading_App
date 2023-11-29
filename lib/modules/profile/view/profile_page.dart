@@ -1,12 +1,10 @@
 // ignore_for_file: deprecated_member_use_from_same_package
 
 import 'package:flutter/material.dart';
-import 'package:trading_app/modules/bottom_bar/bottom_bar.dart';
-import 'package:trading_app/modules/profile/view/widget/my_account.dart';
-import 'package:trading_app/modules/profile/view/widget/my_profile.dart';
+import 'package:go_router/go_router.dart';
 
-import '../../gen/assets.gen.dart';
-import '../../gen/colors.gen.dart';
+import '../../../gen/assets.gen.dart';
+import '../../../gen/colors.gen.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -23,14 +21,7 @@ class ProfilePage extends StatelessWidget {
             Icons.arrow_back,
             color: Colors.white,
           ),
-          onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (_) => const BottomBar(),
-              ),
-            );
-          },
+          onPressed: () => context.go('/bottombar'),
         ),
         title: const Text(
           'Profile',
@@ -113,14 +104,7 @@ class ProfilePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 GestureDetector(
-                  onTap: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => const MyProfile(),
-                      ),
-                    );
-                  },
+                  onTap: () => context.go('/MyProfile'),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -150,14 +134,7 @@ class ProfilePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 GestureDetector(
-                  onTap: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => const MyAccount(),
-                      ),
-                    );
-                  },
+                  onTap: () => context.go('/MyAccount'),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -186,26 +163,29 @@ class ProfilePage extends StatelessWidget {
                   color: ColorName.lightGrey,
                 ),
                 const SizedBox(height: 8),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Assets.icon.lockoff.svg(),
-                        const SizedBox(width: 8),
-                        const Text(
-                          'Change Password',
-                          style: TextStyle(
-                            fontSize: 16,
+                GestureDetector(
+                  onTap: () => context.go('/ChangePassword'),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Assets.icon.lockoff.svg(),
+                          const SizedBox(width: 8),
+                          const Text(
+                            'Change Password',
+                            style: TextStyle(
+                              fontSize: 16,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    const Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      color: ColorName.lightGrey,
-                    ),
-                  ],
+                        ],
+                      ),
+                      const Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        color: ColorName.lightGrey,
+                      ),
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 8),
                 const Divider(
@@ -303,26 +283,29 @@ class ProfilePage extends StatelessWidget {
                   color: ColorName.lightGrey,
                 ),
                 const SizedBox(height: 8),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Assets.icon.allCharts.svg(),
-                        const SizedBox(width: 8),
-                        const Text(
-                          'My Chart List',
-                          style: TextStyle(
-                            fontSize: 16,
+                GestureDetector(
+                  onTap: () => context.go('/MyChartsList'),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Assets.icon.allCharts.svg(),
+                          const SizedBox(width: 8),
+                          const Text(
+                            'My Chart List',
+                            style: TextStyle(
+                              fontSize: 16,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    const Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      color: ColorName.lightGrey,
-                    ),
-                  ],
+                        ],
+                      ),
+                      const Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        color: ColorName.lightGrey,
+                      ),
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 8),
                 const Divider(

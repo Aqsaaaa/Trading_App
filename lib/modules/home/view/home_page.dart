@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:trading_app/gen/colors.gen.dart';
-import 'package:trading_app/modules/profile/profile_page.dart';
-import 'package:trading_app/modules/wallet/view/wallet_page.dart';
 
 import '../../../gen/assets.gen.dart';
 
@@ -43,13 +42,7 @@ class HomePage extends StatelessWidget {
                           ),
                           const SizedBox(width: 8),
                           GestureDetector(
-                            onTap: () {
-                              Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (_) => const ProfilePage(),
-                                  ));
-                            },
+                            onTap: () => context.go('/Profile'),
                             child: const Column(
                               children: [
                                 Text(
@@ -75,9 +68,7 @@ class HomePage extends StatelessWidget {
                       ),
                       IconButton(
                         icon: Assets.icon.notification.svg(),
-                        onPressed: () {
-                          // Tindakan ketika tombol notifikasi ditekan
-                        },
+                        onPressed: () {},
                       ),
                     ],
                   ),
@@ -94,13 +85,7 @@ class HomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               GestureDetector(
-                onTap: () {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => const WalletPage(),
-                      ));
-                },
+                onTap: () => context.go('/Wallet'),
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors

@@ -4,6 +4,7 @@
     <color name="light_blue">#ecf6ff</color>
     
     <color name="yellow">#E2B93B</color>
+    <color name="light_yellow">#fbf6e7</color>
 
     <color name="grey">#F0F0F0</color>
     <color name="light_grey">#C7C7C7</color>
@@ -17,4 +18,6 @@
     <color name="red">#EB5757</color>
 
     <color name="green">#5AB334</color>
+    <color name="light_green">#ebf5e6</color>
+    
 </resources>

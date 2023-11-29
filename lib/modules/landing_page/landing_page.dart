@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:trading_app/gen/colors.gen.dart';
-import 'package:trading_app/modules/landing_page/onboarding.dart';
-import 'package:trading_app/modules/login/view/login_page.dart';
 
 import '../../gen/assets.gen.dart';
 
@@ -47,9 +46,7 @@ class LandingPage extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacementNamed(Onbording.tag);
-                  },
+                  onPressed: () => context.go('/onboarding'),
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.all(15),
                     backgroundColor: ColorName.blue,
@@ -71,14 +68,7 @@ class LandingPage extends StatelessWidget {
                 children: [
                   const Text('Already have an account?'),
                   TextButton(
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const LoginPage(),
-                        ),
-                      );
-                    },
+                    onPressed: () => context.go('/Login'),
                     child: const Text(
                       ' Login',
                       style: TextStyle(

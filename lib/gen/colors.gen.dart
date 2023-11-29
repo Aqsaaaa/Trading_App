@@ -28,8 +28,14 @@ class ColorName {
   /// Color: #ecf6ff
   static const Color lightBlue = Color(0xFFECF6FF);
 
+  /// Color: #ebf5e6
+  static const Color lightGreen = Color(0xFFEBF5E6);
+
   /// Color: #C7C7C7
   static const Color lightGrey = Color(0xFFC7C7C7);
+
+  /// Color: #fbf6e7
+  static const Color lightYellow = Color(0xFFFBF6E7);
 
   /// Color: #EB7D1C
   static const Color orange = Color(0xFFEB7D1C);

@@ -1,9 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:trading_app/modules/landing_page/landing_page.dart';
-import 'package:trading_app/modules/login/view/login_page.dart';
-import 'package:trading_app/modules/register/view/verify_page.dart';
 
 import '../../../gen/assets.gen.dart';
 import '../../../gen/colors.gen.dart';
@@ -186,13 +185,10 @@ class _RegisterPageState extends State<RegisterPage> {
                         TextSpan(
                           text: 'Terms & Condition',
                           style: const TextStyle(
-                            color:
-                                ColorName.blue, // Ganti warna sesuai kebutuhan
+                            color: ColorName.blue,
                           ),
-                          // Tambahkan logika ketika Terms & Condition diklik
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
-                              // Tambahkan logika ketika Terms & Condition diklik
                               if (kDebugMode) {
                                 print('Terms & Condition clicked');
                               }
@@ -209,14 +205,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 children: [
                   const Text("Already have an account?"),
                   TextButton(
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const LoginPage(),
-                        ),
-                      );
-                    },
+                    onPressed: () => context.go('/Login'),
                     child: const Text(
                       'Login',
                       style: TextStyle(
@@ -229,14 +218,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ],
               ),
               ElevatedButton(
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => VerifyPage(),
-                    ),
-                  );
-                },
+                onPressed: () => context.go('/verify'),
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   side: const BorderSide(color: ColorName.blue),

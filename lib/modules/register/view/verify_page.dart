@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trading_app/modules/bottom_bar/bottom_bar.dart';
-import 'package:trading_app/modules/landing_page/landing_page.dart';
-import 'package:trading_app/modules/register/view/register_page.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../gen/colors.gen.dart';
 
@@ -21,7 +19,6 @@ class VerifyWidget extends StatelessWidget {
         textAlign: TextAlign.center,
         style: const TextStyle(fontSize: 18),
         onChanged: (value) {
-          // Pindah fokus ke TextField berikutnya saat TextField saat ini terisi
           if (value.isNotEmpty) {
             FocusScope.of(context).nextFocus();
           }
@@ -45,8 +42,6 @@ class VerifyWidget extends StatelessWidget {
 class VerifyPage extends StatelessWidget {
   VerifyPage({Key? key}) : super(key: key);
 
-  static var tag = 'loggin-page';
-
   List<TextEditingController> controllers =
       List.generate(4, (index) => TextEditingController());
 
@@ -61,14 +56,7 @@ class VerifyPage extends StatelessWidget {
             Icons.arrow_back,
             color: Colors.black,
           ),
-          onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (_) => const LandingPage(),
-              ),
-            );
-          },
+          onPressed: () => context.go('/Landing'),
         ),
       ),
       body: SingleChildScrollView(
@@ -112,33 +100,19 @@ class VerifyPage extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const BottomBar(),
-                    ),
-                  );
-                },
+                onPressed: () => context.go('/Bottombar'),
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   side: const BorderSide(color: ColorName.blue),
                 ),
-                child: const Text('Resend Code'),
+                child: const Text('Verify'),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Center(child: Text("Tidak menerima OTP?")),
                   TextButton(
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const RegisterPage(),
-                        ),
-                      );
-                    },
+                    onPressed: () => context.go('/Register'),
                     child: const Text(
                       'Kirim Ulang Kode',
                       style: TextStyle(

@@ -35,9 +35,7 @@ class DisplayedChartsItemWidget extends StatelessWidget {
             Column(
               children: [
                 GestureDetector(
-                  onTap: () {
-                    // Add your onTap logic here
-                  },
+                  onTap: () {},
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.red,
@@ -137,9 +135,7 @@ class DisplayedChartsMyItemWidget extends StatelessWidget {
             Column(
               children: [
                 GestureDetector(
-                  onTap: () {
-                    // Add your onTap logic here
-                  },
+                  onTap: () {},
                   child: Container(
                     decoration: BoxDecoration(
                       color: ColorName.green,
@@ -147,8 +143,8 @@ class DisplayedChartsMyItemWidget extends StatelessWidget {
                     ),
                     child: const Padding(
                       padding: EdgeInsets.symmetric(
-                        horizontal: 6.0,
-                        vertical: 4.0,
+                        horizontal: 6,
+                        vertical: 4,
                       ),
                       child: Text(
                         'Created By You',

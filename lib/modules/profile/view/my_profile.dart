@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:trading_app/gen/colors.gen.dart';
-import 'package:trading_app/modules/profile/profile_page.dart';
-import 'package:trading_app/modules/profile/view/widget/form_edit_account.dart';
 
-class MyAccount extends StatelessWidget {
-  const MyAccount({Key? key}) : super(key: key);
+class MyProfile extends StatelessWidget {
+  const MyProfile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,17 +16,10 @@ class MyAccount extends StatelessWidget {
             Icons.arrow_back,
             color: Colors.black,
           ),
-          onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (_) => const ProfilePage(),
-              ),
-            );
-          },
+          onPressed: () => context.go('/profile'),
         ),
         title: const Text(
-          'My Account',
+          'My Profile',
           style: TextStyle(
             color: Colors.black,
             fontSize: 20,
@@ -42,22 +34,55 @@ class MyAccount extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Email',
+              'Full Name',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 4),
-            const Text('ahmadsolikin@gmail.com'),
+            const Text('Ahmad Solikin'),
             const Divider(
               height: 20,
               thickness: 1,
               color: ColorName.lightGrey,
             ),
             const Text(
-              'Mobile Phone',
+              'Username',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 4),
-            const Text('0812345678'),
+            const Text('Solikinn'),
+            const Divider(
+              height: 20,
+              thickness: 1,
+              color: ColorName.lightGrey,
+            ),
+            const Text(
+              'Gender',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 4),
+            const Text('Male'),
+            const Divider(
+              height: 20,
+              thickness: 1,
+              color: ColorName.lightGrey,
+            ),
+            const Text(
+              'Country',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 4),
+            const Text('Indonesia'),
+            const Divider(
+              height: 20,
+              thickness: 1,
+              color: ColorName.lightGrey,
+            ),
+            const Text(
+              'City',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 4),
+            const Text('Jakarta'),
             const Divider(
               height: 20,
               thickness: 1,
@@ -67,14 +92,7 @@ class MyAccount extends StatelessWidget {
             SizedBox(
               width: double.infinity, // Add the width property here
               child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const FormMyAccount(),
-                    ),
-                  );
-                },
+                onPressed: () => context.go('/FormMyProfile'),
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
                   backgroundColor: ColorName.blue,

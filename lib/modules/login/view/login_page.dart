@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:trading_app/modules/bottom_bar/bottom_bar.dart';
-import 'package:trading_app/modules/landing_page/landing_page.dart';
-import 'package:trading_app/modules/register/view/register_page.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../gen/assets.gen.dart';
 import '../../../gen/colors.gen.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
-  static var tag = 'loggin-page';
 
   @override
   Widget build(BuildContext context) {
@@ -21,15 +18,7 @@ class LoginPage extends StatelessWidget {
             Icons.arrow_back,
             color: Colors.black,
           ),
-          onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (_) => const LandingPage(),
-              ),
-            );
-            // Navigator.pop(context);
-          },
+          onPressed: () => context.go('/Landing'),
         ),
       ),
       body: SingleChildScrollView(
@@ -98,14 +87,7 @@ class LoginPage extends StatelessWidget {
                 children: [
                   const Text("Don't have an account?"),
                   TextButton(
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const RegisterPage(),
-                        ),
-                      );
-                    },
+                    onPressed: () => context.go('/Register'),
                     child: const Text(
                       'Register',
                       style: TextStyle(
@@ -118,14 +100,7 @@ class LoginPage extends StatelessWidget {
                 ],
               ),
               ElevatedButton(
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const BottomBar(),
-                    ),
-                  );
-                },
+                onPressed: () => context.go('/BottomBar'),
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   side: const BorderSide(color: ColorName.blue),

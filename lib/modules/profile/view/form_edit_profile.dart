@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:trading_app/gen/colors.gen.dart';
-import 'package:trading_app/modules/profile/view/widget/my_profile.dart';
 
 class FormMyProfile extends StatelessWidget {
   const FormMyProfile({Key? key}) : super(key: key);
@@ -16,14 +16,7 @@ class FormMyProfile extends StatelessWidget {
             Icons.arrow_back,
             color: Colors.black,
           ),
-          onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (_) => const MyProfile(),
-              ),
-            );
-          },
+          onPressed: () => context.go('/MyProfile'),
         ),
         title: const Text(
           'My Profile',

@@ -76,7 +76,7 @@ class _ExpansionPanelListExampleState extends State<ExpansionPanelListExample> {
             );
           },
           body: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: ColorName.grey,
             ),
             child: ListTile(

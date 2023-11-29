@@ -42,7 +42,7 @@ class ChartsItemWidget extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        // Add your onTap logic here
+
                       },
                       child: Container(
                         decoration: BoxDecoration(
