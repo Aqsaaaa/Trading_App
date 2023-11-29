@@ -81,14 +81,14 @@ class _ExpansionPanelListExampleState extends State<ExpansionPanelListExample> {
             ),
             child: ListTile(
               title: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: List.generate(
-                      item.expandedValue.length,
-                      (index) =>
-                          Text('${index + 1}. ${item.expandedValue[index]}',
-                          textAlign: TextAlign.justify,
-                          ))),
-              subtitle: Text('subtitle'),
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: List.generate(
+                  item.expandedValue.length,
+                  (index) => Text(
+                    '${index + 1}. ${item.expandedValue[index]}',
+                  ),
+                ),
+              ),
             ),
           ),
           isExpanded: item.isExpanded,
