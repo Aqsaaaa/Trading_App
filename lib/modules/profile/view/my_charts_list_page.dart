@@ -39,7 +39,7 @@ class MyChartsListPage extends StatelessWidget {
               child: Align(
                 alignment: Alignment.centerRight,
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () => context.go('/AddMyCharts'),
                   child: const Text(
                     '+ Add',
                     style: TextStyle(color: ColorName.blue, fontSize: 20),

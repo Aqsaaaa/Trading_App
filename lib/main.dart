@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:trading_app/modules/landing_page/landing_page.dart';
+import 'package:trading_app/modules/profile/view/add_my_charts.dart';
 import 'package:trading_app/modules/profile/view/my_charts_list_page.dart';
 import 'package:trading_app/modules/profile/view/verification_page.dart';
 import 'package:trading_app/modules/wallet/view/instruction/bri_page.dart';
@@ -93,6 +94,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/MyChartsList',
       builder: (context, state) => const MyChartsListPage(),
+    ),
+    GoRoute(
+      path: '/AddMyCharts',
+      builder: (context, state) => const AddChartsPage(),
     ),
     GoRoute(
       path: '/Verification',
