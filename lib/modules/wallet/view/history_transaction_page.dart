@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:trading_app/gen/colors.gen.dart';
+import 'package:trading_app/modules/transaction_proof/transaction_proof.dart';
 import 'package:trading_app/modules/wallet/view/wallet_page.dart';
 
 import '../../../gen/assets.gen.dart';
@@ -63,42 +64,50 @@ class HistoryTransactionPage extends StatelessWidget {
                     Assets.icon.creditcard.svg(color: ColorName.blue),
                     'Deposit',
                     'Tues, 24 March 2023',
-                    'Rp 10.000.000'),
+                    'Rp 10.000.000',
+                      context),
                 _historySubscribed(
                     Assets.icon.creditcard.svg(color: ColorName.blue),
                     'Deposit',
                     'Tues, 24 March 2023',
-                    'Rp 10.000.000'),
+                    'Rp 10.000.000',
+                    context),
                 _historySubscribed(
                     Assets.icon.coin.svg(color: ColorName.orange),
                     'Earning',
                     'Tues, 24 March 2023',
-                    'Rp 10.000.000'),
+                    'Rp 10.000.000',
+                    context),
                 _historySubscribed(
                     Assets.icon.coin.svg(color: ColorName.orange),
                     'Earning',
                     'Tues, 24 March 2023',
-                    'Rp 10.000.000'),
+                    'Rp 10.000.000',
+                    context),
                 _historySubscribed(
                     Assets.icon.download.svg(color: ColorName.green),
                     'Withdraw',
                     'Tues, 24 March 2023',
-                    'Rp 10.000.000'),
+                    'Rp 10.000.000',
+                    context),
                 _historySubscribed(
                     Assets.icon.download.svg(color: ColorName.green),
                     'Withdraw',
                     'Tues, 24 March 2023',
-                    'Rp 10.000.000'),
+                    'Rp 10.000.000',
+                    context),
                 _historySubscribed(
                     Assets.icon.checkcircle.svg(color: ColorName.red),
                     'Subscribed',
                     'Tues, 24 March 2023',
-                    'Rp 10.000.000'),
+                    'Rp 10.000.000',
+                    context),
                 _historySubscribed(
                     Assets.icon.checkcircle.svg(color: ColorName.red),
                     'Subscribed',
                     'Tues, 24 March 2023',
-                    'Rp 10.000.000'),
+                    'Rp 10.000.000',
+                    context),
               ],
             ),
             Column(
@@ -107,12 +116,14 @@ class HistoryTransactionPage extends StatelessWidget {
                     Assets.icon.coin.svg(color: ColorName.orange),
                     'Earning',
                     'Tues, 24 March 2023',
-                    'Rp 10.000.000'),
+                    'Rp 10.000.000',
+                    context),
                 _historySubscribed(
                     Assets.icon.coin.svg(color: ColorName.orange),
                     'Earning',
                     'Tues, 24 March 2023',
-                    'Rp 10.000.000'),
+                    'Rp 10.000.000',
+                    context),
               ],
             ),
             Column(
@@ -121,12 +132,14 @@ class HistoryTransactionPage extends StatelessWidget {
                     Assets.icon.creditcard.svg(color: ColorName.blue),
                     'Deposit',
                     'Tues, 24 March 2023',
-                    'Rp 10.000.000'),
+                    'Rp 10.000.000',
+                    context),
                 _historySubscribed(
                     Assets.icon.creditcard.svg(color: ColorName.blue),
                     'Deposit',
                     'Tues, 24 March 2023',
-                    'Rp 10.000.000'),
+                    'Rp 10.000.000',
+                    context),
               ],
             ),
             Column(
@@ -135,12 +148,14 @@ class HistoryTransactionPage extends StatelessWidget {
                     Assets.icon.download.svg(color: ColorName.green),
                     'Withdraw',
                     'Tues, 24 March 2023',
-                    'Rp 10.000.000'),
+                    'Rp 10.000.000',
+                    context),
                 _historySubscribed(
                     Assets.icon.download.svg(color: ColorName.green),
                     'Withdraw',
                     'Tues, 24 March 2023',
-                    'Rp 10.000.000'),
+                    'Rp 10.000.000',
+                    context),
               ],
             ),
             Column(
@@ -149,12 +164,14 @@ class HistoryTransactionPage extends StatelessWidget {
                     Assets.icon.checkcircle.svg(color: ColorName.red),
                     'Subscribed',
                     'Tues, 24 March 2023',
-                    'Rp 10.000.000'),
+                    'Rp 10.000.000',
+                    context),
                 _historySubscribed(
                     Assets.icon.checkcircle.svg(color: ColorName.red),
                     'Subscribed',
                     'Tues, 24 March 2023',
-                    'Rp 10.000.000'),
+                    'Rp 10.000.000',
+                    context),
               ],
             ),
           ]),
@@ -165,47 +182,66 @@ class HistoryTransactionPage extends StatelessWidget {
 }
 
 Widget _historySubscribed(
-    SvgPicture icon, String title, String subtitle, String value) {
-  return Column(
-    children: [
-      const SizedBox(height: 16),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              icon,
-              const SizedBox(width: 10),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: const TextStyle(
-                      fontSize: 16.0,
-                      color: ColorName.blue,
-                      fontWeight: FontWeight.bold,
+    SvgPicture icon, String title, String subtitle, String value, BuildContext context) {
+  return GestureDetector(
+    onTap: () {
+      _navigateToTransactionProof(context, title, subtitle, value);
+    },
+    child: Column(
+      children: [
+        const SizedBox(height: 16),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                icon,
+                const SizedBox(width: 10),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        fontSize: 16.0,
+                        color: ColorName.blue,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  Text(
-                    subtitle,
-                    style: const TextStyle(
-                      fontSize: 14.0,
+                    Text(
+                      subtitle,
+                      style: const TextStyle(
+                        fontSize: 14.0,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          Text(value),
-        ],
-      ),
-      const SizedBox(height: 4),
-      const Divider(
-        thickness: 2,
-        height: 20,
-      ),
-    ],
+                  ],
+                ),
+              ],
+            ),
+            Text(value),
+          ],
+        ),
+        const SizedBox(height: 4),
+        const Divider(
+          thickness: 2,
+          height: 20,
+        ),
+      ],
+    ),
   );
 }
+
+void _navigateToTransactionProof(BuildContext context, String title, String subtitle, String value) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (_) => TransactionProof(
+        title: title,
+        subtitle: subtitle,
+        value: value,
+      ),
+    ),
+  );
+}
+
