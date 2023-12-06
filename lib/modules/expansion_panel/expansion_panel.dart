@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trading_app/gen/colors.gen.dart';
 
-// stores ExpansionPanel state information
 class Item {
   Item({
     required this.expandedValue,
@@ -14,42 +13,26 @@ class Item {
   bool isExpanded;
 }
 
-List<Item> generateItems(int numberOfItems) {
-  return [
-    Item(headerValue: 'Internet Banking BRI (Mobile Version)', expandedValue: [
-      'Open the BRI Mobile Application and Login to BRI Internet Banking',
-      'Select the Payment menu > Briva',
-      'Press the "Payment Code" column then enter 88812 8837356 098 as the Briva Number and click "Ok"',
-      'Enter the top up amount you want to pay and press "Send". If account virtual number is correct, transaction information will be displayed.',
-      'Confirm the transaction by entering yout internet banking password and clicking "Send"'
-    ]),
-    Item(headerValue: 'BRIMO', expandedValue: [
-      'Open the BRI Mobile Application and Login to BRI Internet Banking',
-      'Select the Payment menu > Briva',
-      'Press the "Payment Code" column then enter 88812 8837356 098 as the Briva Number and click "Ok"',
-      'Enter the top up amount you want to pay and press "Send". If account virtual number is correct, transaction information will be displayed.',
-      'Confirm the transaction by entering yout internet banking password and clicking "Send"'
-    ]),
-    Item(headerValue: 'ATM Machine BRI', expandedValue: [
-      'Open the BRI Mobile Application and Login to BRI Internet Banking',
-      'Select the Payment menu > Briva',
-      'Press the "Payment Code" column then enter 88812 8837356 098 as the Briva Number and click "Ok"',
-      'Enter the top up amount you want to pay and press "Send". If account virtual number is correct, transaction information will be displayed.',
-      'Confirm the transaction by entering yout internet banking password and clicking "Send"'
-    ])
-  ];
-}
-
 class ExpansionPanelListExample extends StatefulWidget {
-  const ExpansionPanelListExample({super.key});
+  final List<Item> data;
+
+  const ExpansionPanelListExample({Key? key, required this.data})
+      : super(key: key);
 
   @override
   State<ExpansionPanelListExample> createState() =>
       _ExpansionPanelListExampleState();
 }
 
-class _ExpansionPanelListExampleState extends State<ExpansionPanelListExample> {
-  final List<Item> _data = generateItems(3);
+class _ExpansionPanelListExampleState
+    extends State<ExpansionPanelListExample> {
+  late List<Item> _data;
+
+  @override
+  void initState() {
+    super.initState();
+    _data = widget.data;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +67,7 @@ class _ExpansionPanelListExampleState extends State<ExpansionPanelListExample> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: List.generate(
                   item.expandedValue.length,
-                  (index) => Text(
+                      (index) => Text(
                     '${index + 1}. ${item.expandedValue[index]}',
                   ),
                 ),

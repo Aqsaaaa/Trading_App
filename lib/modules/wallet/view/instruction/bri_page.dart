@@ -8,6 +8,33 @@ import '../../../../gen/assets.gen.dart';
 class BriPage extends StatelessWidget {
   const BriPage({Key? key}) : super(key: key);
 
+
+  List<Item> generateItems(int numberOfItems) {
+    return [
+      Item(headerValue: 'Internet Banking BRI (Mobile Version)', expandedValue: [
+        'Open the BRI Mobile Application and Login to BRI Internet Banking',
+        'Select the Payment menu > Briva',
+        'Press the "Payment Code" column then enter 88812 8837356 098 as the Briva Number and click "Ok"',
+        'Enter the top up amount you want to pay and press "Send". If account virtual number is correct, transaction information will be displayed.',
+        'Confirm the transaction by entering yout internet banking password and clicking "Send"'
+      ]),
+      Item(headerValue: 'BRIMO', expandedValue: [
+        'Open the BRI Mobile Application and Login to BRI Internet Banking',
+        'Select the Payment menu > Briva',
+        'Press the "Payment Code" column then enter 88812 8837356 098 as the Briva Number and click "Ok"',
+        'Enter the top up amount you want to pay and press "Send". If account virtual number is correct, transaction information will be displayed.',
+        'Confirm the transaction by entering yout internet banking password and clicking "Send"'
+      ]),
+      Item(headerValue: 'ATM Machine BRI', expandedValue: [
+        'Open the BRI Mobile Application and Login to BRI Internet Banking',
+        'Select the Payment menu > Briva',
+        'Press the "Payment Code" column then enter 88812 8837356 098 as the Briva Number and click "Ok"',
+        'Enter the top up amount you want to pay and press "Send". If account virtual number is correct, transaction information will be displayed.',
+        'Confirm the transaction by entering yout internet banking password and clicking "Send"'
+      ])
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -160,7 +187,7 @@ class BriPage extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               const SizedBox(height: 8),
-              ExpansionPanelListExample()
+              ExpansionPanelListExample(data: generateItems(3))
             ],
           ),
         ),
