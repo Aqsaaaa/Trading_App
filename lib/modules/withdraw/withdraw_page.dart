@@ -14,11 +14,46 @@ class WithdrawPage extends StatelessWidget {
           transactionValue: 'Rp 1.000.000',
           expandedValue: [
             {
-              'title': 'Amount',
-              'value': 'Rp 1.000.000',
+              'title': 'Withdrawal code',
+              'value': 'qwerty1234556',
+            },
+            {
+              'title' : 'Transfer to account',
+              'value' : '1234567890',
+            },
+            {
+              'title' : 'Bank',
+              'value' : 'Bank Rakyat Indonesia',
+            },
+            {
+              'title' : 'Transferred on date',
+              'value' : '28-05-2023 10:30 AM',
             }
           ],
           showOrderedListNumber: false),
+      Item(
+        headerValue: 'Success',
+        transactionValue: 'Rp 1.000.000',
+        showOrderedListNumber: false,
+        expandedValue: [
+          {
+            'title': 'Withdrawal code',
+            'value': 'qwerty1234556',
+          },
+          {
+            'title' : 'Transfer to account',
+            'value' : '1234567890',
+          },
+          {
+            'title' : 'Bank',
+            'value' : 'Bank Rakyat Indonesia',
+          },
+          {
+            'title' : 'Transferred on date',
+            'value' : '28-05-2023 10:30 AM',
+          }
+        ]
+      )
     ];
   }
 
@@ -76,6 +111,7 @@ class WithdrawPage extends StatelessWidget {
               const SizedBox(height: 8),
               ExpansionPanelListExample(
                 data: generateItems(),
+                headerColor: ColorName.green,
               )
             ],
           ),
