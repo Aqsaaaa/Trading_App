@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:trading_app/modules/detail_item/view/detail_item_page.dart';
 import 'package:trading_app/modules/landing_page/landing_page.dart';
-import 'package:trading_app/modules/profile/view/add_my_charts.dart';
 import 'package:trading_app/modules/profile/view/my_charts_list_page.dart';
+import 'package:trading_app/modules/profile/view/setting_charts_page.dart';
+import 'package:trading_app/modules/profile/view/summary_data_page.dart';
 import 'package:trading_app/modules/profile/view/verification_page.dart';
 import 'package:trading_app/modules/wallet/view/instruction/bri_page.dart';
 
 import 'modules/bottom_bar/bottom_bar.dart';
 import 'modules/landing_page/onboarding.dart';
 import 'modules/login/view/login_page.dart';
+import 'modules/profile/view/add_charts_page.dart';
 import 'modules/profile/view/change_password_page.dart';
 import 'modules/profile/view/form_edit_account_page.dart';
 import 'modules/profile/view/form_edit_profile_page.dart';
@@ -100,8 +103,20 @@ final GoRouter router = GoRouter(
       builder: (context, state) => const AddChartsPage(),
     ),
     GoRoute(
+      path: '/SettingCharts',
+      builder: (context, state) => const SettingChartsPage(),
+    ),
+    GoRoute(
+      path: '/SummaryData',
+      builder: (context, state) => const SummaryDataPage(),
+    ),
+    GoRoute(
       path: '/Verification',
       builder: (context, state) => const VerificationPage(),
+    ),
+    GoRoute(
+      path: '/DetailItem',
+      builder: (context, state) => const DetailItemPage(),
     ),
   ],
 );

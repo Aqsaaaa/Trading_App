@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:trading_app/gen/colors.gen.dart';
 
-class AddChartsPage extends StatelessWidget {
-  const AddChartsPage({Key? key}) : super(key: key);
+class SettingChartsPage extends StatelessWidget {
+  const SettingChartsPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class AddChartsPage extends StatelessWidget {
             Icons.arrow_back,
             color: Colors.black,
           ),
-          onPressed: () => context.go('/profile'),
+          onPressed: () => context.go('/AddChartsPage'),
         ),
         title: const Text(
           'Add Charts List',
@@ -331,6 +331,22 @@ class AddChartsPage extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+            const SizedBox(height: 16),
+            GestureDetector(
+              onTap: () => context.go('/SummaryData'),
+              child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Icon(
+                      Icons.keyboard_arrow_right,
+                      color: ColorName.blue,
+                    ),
+                    Text(
+                      'Save',
+                      style: TextStyle(color: ColorName.blue),
+                    )
+                  ]),
             )
           ],
         ),

@@ -21,6 +21,7 @@ class SearchFilterWidget extends StatelessWidget {
                 child: const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 8),
                   child: TextField(
+                    keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                       icon: Icon(
                         Icons.search,
@@ -44,9 +45,7 @@ class SearchFilterWidget extends StatelessWidget {
                   Icons.filter_list,
                   color: Colors.white,
                 ),
-                onPressed: () {
-                  
-                },
+                onPressed: () {},
               ),
             ),
           ],
