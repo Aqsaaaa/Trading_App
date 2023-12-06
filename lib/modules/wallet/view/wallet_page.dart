@@ -4,11 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:trading_app/gen/colors.gen.dart';
+import 'package:trading_app/modules/withdraw/withdraw_page.dart';
 
 import '../../../gen/assets.gen.dart';
 
 class WalletPage extends StatelessWidget {
   const WalletPage({super.key});
+
+  static var tag = 'loggin-page';
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +100,12 @@ class WalletPage extends StatelessWidget {
                             const SizedBox(width: 12),
                             ElevatedButton(
                               onPressed: () {
-                                // Add the desired functionality here
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => const WithdrawPage(),
+                                  ),
+                                );
                               },
                               style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(

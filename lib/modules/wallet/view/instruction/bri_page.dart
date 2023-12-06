@@ -8,6 +8,39 @@ import '../../../../gen/assets.gen.dart';
 class BriPage extends StatelessWidget {
   const BriPage({Key? key}) : super(key: key);
 
+  List<Item> generateItems(int numberOfItems) {
+    return [
+      Item(
+          headerValue: 'Internet Banking BRI (Mobile Version)',
+          expandedValue: [
+            {'title': 'Open the BRI Mobile Application and Login to BRI Internet Banking'},
+            {'title': 'Select the Payment menu > Briva'},
+            {'title': 'Press the "Payment Code" column then enter 88812 8837356 098 as the Briva Number and click "Ok"'},
+            {'title': 'Enter the top-up amount you want to pay and press "Send". If the account virtual number is correct, transaction information will be displayed.'},
+            {'title': 'Confirm the transaction by entering your internet banking password and clicking "Send"'}
+          ],
+      ),
+      Item(
+          headerValue: 'BRIMO',
+          expandedValue: [
+            {'title': 'Open the BRI Mobile Application and Login to BRI Internet Banking'},
+            {'title': 'Select the Payment menu > Briva'},
+            {'title': 'Press the "Payment Code" column then enter 88812 8837356 098 as the Briva Number and click "Ok"'},
+            {'title': 'Enter the top-up amount you want to pay and press "Send". If the account virtual number is correct, transaction information will be displayed.'},
+            {'title': 'Confirm the transaction by entering your internet banking password and clicking "Send"'}
+          ]),
+      Item(
+          headerValue: 'ATM Machine BRI',
+          expandedValue: [
+            {'title': 'Open the BRI Mobile Application and Login to BRI Internet Banking'},
+            {'title': 'Select the Payment menu > Briva'},
+            {'title': 'Press the "Payment Code" column then enter 88812 8837356 098 as the Briva Number and click "Ok"'},
+            {'title': 'Enter the top-up amount you want to pay and press "Send". If the account virtual number is correct, transaction information will be displayed.'},
+            {'title': 'Confirm the transaction by entering your internet banking password and clicking "Send"'}
+          ])
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -165,12 +198,20 @@ class BriPage extends StatelessWidget {
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                     ),
                     const SizedBox(height: 8),
-                    const ExpansionPanelListExample()
+                    const ExpansionPanelListExample(data: [],)
                   ],
                 ),
               ),
-            ),
-          ],
-        ));
+              // const SizedBox(height: 8),
+              // const Text(
+              //   'Payment Instructions',
+              //   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              // ),
+              // const SizedBox(height: 8),
+              // ExpansionPanelListExample(data: generateItems(3)),
+            )
+            ],
+          ),
+      );
   }
 }
