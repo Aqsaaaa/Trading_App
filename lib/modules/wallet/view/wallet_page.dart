@@ -5,12 +5,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:trading_app/gen/colors.gen.dart';
 import 'package:trading_app/modules/wallet/view/deposit_page.dart';
 import 'package:trading_app/modules/wallet/view/history_transaction_page.dart';
+import 'package:trading_app/modules/withdraw/withdraw_page.dart';
 
 import '../../../gen/assets.gen.dart';
 import '../../bottom_bar/bottom_bar.dart';
 
 class WalletPage extends StatelessWidget {
   const WalletPage({super.key});
+
   static var tag = 'loggin-page';
 
   @override
@@ -120,7 +122,12 @@ class WalletPage extends StatelessWidget {
                             const SizedBox(width: 12),
                             ElevatedButton(
                               onPressed: () {
-                                // Add the desired functionality here
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => const WithdrawPage(),
+                                  ),
+                                );
                               },
                               style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(

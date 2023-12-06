@@ -8,30 +8,36 @@ import '../../../../gen/assets.gen.dart';
 class BriPage extends StatelessWidget {
   const BriPage({Key? key}) : super(key: key);
 
-
   List<Item> generateItems(int numberOfItems) {
     return [
-      Item(headerValue: 'Internet Banking BRI (Mobile Version)', expandedValue: [
-        'Open the BRI Mobile Application and Login to BRI Internet Banking',
-        'Select the Payment menu > Briva',
-        'Press the "Payment Code" column then enter 88812 8837356 098 as the Briva Number and click "Ok"',
-        'Enter the top up amount you want to pay and press "Send". If account virtual number is correct, transaction information will be displayed.',
-        'Confirm the transaction by entering yout internet banking password and clicking "Send"'
-      ]),
-      Item(headerValue: 'BRIMO', expandedValue: [
-        'Open the BRI Mobile Application and Login to BRI Internet Banking',
-        'Select the Payment menu > Briva',
-        'Press the "Payment Code" column then enter 88812 8837356 098 as the Briva Number and click "Ok"',
-        'Enter the top up amount you want to pay and press "Send". If account virtual number is correct, transaction information will be displayed.',
-        'Confirm the transaction by entering yout internet banking password and clicking "Send"'
-      ]),
-      Item(headerValue: 'ATM Machine BRI', expandedValue: [
-        'Open the BRI Mobile Application and Login to BRI Internet Banking',
-        'Select the Payment menu > Briva',
-        'Press the "Payment Code" column then enter 88812 8837356 098 as the Briva Number and click "Ok"',
-        'Enter the top up amount you want to pay and press "Send". If account virtual number is correct, transaction information will be displayed.',
-        'Confirm the transaction by entering yout internet banking password and clicking "Send"'
-      ])
+      Item(
+          headerValue: 'Internet Banking BRI (Mobile Version)',
+          expandedValue: [
+            {'title': 'Open the BRI Mobile Application and Login to BRI Internet Banking'},
+            {'title': 'Select the Payment menu > Briva'},
+            {'title': 'Press the "Payment Code" column then enter 88812 8837356 098 as the Briva Number and click "Ok"'},
+            {'title': 'Enter the top-up amount you want to pay and press "Send". If the account virtual number is correct, transaction information will be displayed.'},
+            {'title': 'Confirm the transaction by entering your internet banking password and clicking "Send"'}
+          ],
+      ),
+      Item(
+          headerValue: 'BRIMO',
+          expandedValue: [
+            {'title': 'Open the BRI Mobile Application and Login to BRI Internet Banking'},
+            {'title': 'Select the Payment menu > Briva'},
+            {'title': 'Press the "Payment Code" column then enter 88812 8837356 098 as the Briva Number and click "Ok"'},
+            {'title': 'Enter the top-up amount you want to pay and press "Send". If the account virtual number is correct, transaction information will be displayed.'},
+            {'title': 'Confirm the transaction by entering your internet banking password and clicking "Send"'}
+          ]),
+      Item(
+          headerValue: 'ATM Machine BRI',
+          expandedValue: [
+            {'title': 'Open the BRI Mobile Application and Login to BRI Internet Banking'},
+            {'title': 'Select the Payment menu > Briva'},
+            {'title': 'Press the "Payment Code" column then enter 88812 8837356 098 as the Briva Number and click "Ok"'},
+            {'title': 'Enter the top-up amount you want to pay and press "Send". If the account virtual number is correct, transaction information will be displayed.'},
+            {'title': 'Confirm the transaction by entering your internet banking password and clicking "Send"'}
+          ])
     ];
   }
 
