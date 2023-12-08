@@ -34,6 +34,61 @@ class MyAccountPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
+              'Full Name',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 4),
+            const Text('Ahmad Solikin'),
+            const Divider(
+              height: 20,
+              thickness: 1,
+              color: ColorName.lightGrey,
+            ),
+            const Text(
+              'Username',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 4),
+            const Text('Solikinn'),
+            const Divider(
+              height: 20,
+              thickness: 1,
+              color: ColorName.lightGrey,
+            ),
+            const Text(
+              'Gender',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 4),
+            const Text('Male'),
+            const Divider(
+              height: 20,
+              thickness: 1,
+              color: ColorName.lightGrey,
+            ),
+            const Text(
+              'Country',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 4),
+            const Text('Indonesia'),
+            const Divider(
+              height: 20,
+              thickness: 1,
+              color: ColorName.lightGrey,
+            ),
+            const Text(
+              'City',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 4),
+            const Text('Jakarta'),
+            const Divider(
+              height: 20,
+              thickness: 1,
+              color: ColorName.lightGrey,
+            ),
+            const Text(
               'Email',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),

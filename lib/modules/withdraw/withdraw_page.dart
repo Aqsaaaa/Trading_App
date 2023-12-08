@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:trading_app/modules/expansion_panel/expansion_panel.dart';
 
 import '../../gen/assets.gen.dart';
@@ -18,42 +19,41 @@ class WithdrawPage extends StatelessWidget {
               'value': 'qwerty1234556',
             },
             {
-              'title' : 'Transfer to account',
-              'value' : '1234567890',
+              'title': 'Transfer to account',
+              'value': '1234567890',
             },
             {
-              'title' : 'Bank',
-              'value' : 'Bank Rakyat Indonesia',
+              'title': 'Bank',
+              'value': 'Bank Rakyat Indonesia',
             },
             {
-              'title' : 'Transferred on date',
-              'value' : '28-05-2023 10:30 AM',
+              'title': 'Transferred on date',
+              'value': '28-05-2023 10:30 AM',
             }
           ],
           showOrderedListNumber: false),
       Item(
-        headerValue: 'Success',
-        transactionValue: 'Rp 1.000.000',
-        showOrderedListNumber: false,
-        expandedValue: [
-          {
-            'title': 'Withdrawal code',
-            'value': 'qwerty1234556',
-          },
-          {
-            'title' : 'Transfer to account',
-            'value' : '1234567890',
-          },
-          {
-            'title' : 'Bank',
-            'value' : 'Bank Rakyat Indonesia',
-          },
-          {
-            'title' : 'Transferred on date',
-            'value' : '28-05-2023 10:30 AM',
-          }
-        ]
-      )
+          headerValue: 'Success',
+          transactionValue: 'Rp 1.000.000',
+          showOrderedListNumber: false,
+          expandedValue: [
+            {
+              'title': 'Withdrawal code',
+              'value': 'qwerty1234556',
+            },
+            {
+              'title': 'Transfer to account',
+              'value': '1234567890',
+            },
+            {
+              'title': 'Bank',
+              'value': 'Bank Rakyat Indonesia',
+            },
+            {
+              'title': 'Transferred on date',
+              'value': '28-05-2023 10:30 AM',
+            }
+          ])
     ];
   }
 
@@ -95,9 +95,12 @@ class WithdrawPage extends StatelessWidget {
                       )),
                   TextButton(
                     onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                        content: Text('Coming Soon'),
-                      ));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const AddBankPage(),
+                        ),
+                      );
                     },
                     child: const Text('+  Add Bank Account',
                         style: TextStyle(fontSize: 16, color: ColorName.green)),
@@ -118,6 +121,215 @@ class WithdrawPage extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class AddBankPage extends StatelessWidget {
+  const AddBankPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            'Add Bank',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          centerTitle: true,
+          leading: GestureDetector(
+            child: const Icon(Icons.arrow_back_rounded),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+        ),
+        body: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const Text(
+                    'Select Bank',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 8),
+                  SizedBox(
+                    height: 35,
+                    child: DropdownButtonFormField<String>(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        contentPadding: const EdgeInsets.all(8),
+                        hintText: 'Select Bank',
+                      ),
+                      items: const [
+                        DropdownMenuItem<String>(
+                          value: 'Bank BRI',
+                          child: Row(
+                            children: [
+                              Text('Bank BRI'),
+                            ],
+                          ),
+                        ),
+                        DropdownMenuItem<String>(
+                          value: 'Bank BCA',
+                          child: Row(
+                            children: [
+                              Text('Bank BCA'),
+                            ],
+                          ),
+                        ),
+                        DropdownMenuItem<String>(
+                          value: 'Bank BNI',
+                          child: Row(
+                            children: [
+                              Text('Bank BNI'),
+                            ],
+                          ),
+                        ),
+                      ],
+                      onChanged: (value) {},
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  const Text(
+                    'Name Bank Account',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 8),
+                  SizedBox(
+                    height: 35,
+                    child: TextFormField(
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        contentPadding: const EdgeInsets.all(8),
+                        hintText: 'Input Name Bank Account',
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  const Text(
+                    'Bank Account Number',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 8),
+                  SizedBox(
+                    height: 35,
+                    child: TextFormField(
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        contentPadding: const EdgeInsets.all(8),
+                        hintText: 'Input Bank Account Number',
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  const Text(
+                    'Upload Bank Account Number',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 8),
+                  SizedBox(
+                    height: 35,
+                    child: Stack(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey, width: 1.0),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          padding: const EdgeInsets.all(8),
+                          width: double.infinity,
+                          child: const Text(
+                            'Choose File',
+                            style: TextStyle(
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ),
+                        // Positioned(
+                        //   top: 0,
+                        //   bottom: 3,
+                        //   right: 80,
+                        //   child: IconButton(
+                        //     onPressed: () {
+                        //       // Add delete logic here
+                        //     },
+                        //     icon: const Icon(
+                        //       Icons.clear,
+                        //       size: 20,
+                        //     ),
+                        //   ),
+                        // ),
+                        Positioned(
+                          top: 0,
+                          bottom: 0,
+                          right: 0,
+                          child: GestureDetector(
+                            onTap: () {},
+                            child: Container(
+                              width: 80,
+                              decoration: const BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(8),
+                                  bottomRight: Radius.circular(8),
+                                ),
+                                color: ColorName.blue,
+                              ),
+                              child: const Center(
+                                child: Text(
+                                  'Upload',
+                                  style: TextStyle(
+                                      color: ColorName.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  const Text(
+                    'Maximum upload file size: 5 MB',
+                    textAlign: TextAlign.end,
+                  ),
+                  const SizedBox(height: 8),
+                  // SizedBox(
+                  //   width: double.infinity,
+                  //   child: ElevatedButton(
+                  //     onPressed: () {},
+                  //     style: ElevatedButton.styleFrom(
+                  //       foregroundColor: Colors.white,
+                  //       backgroundColor: ColorName.blue,
+                  //       padding: const EdgeInsets.all(10),
+                  //       shape: RoundedRectangleBorder(
+                  //         borderRadius: BorderRadius.circular(6),
+                  //       ),
+                  //     ),
+                  //     child: const Text(
+                  //       'Save Change',
+                  //       style: TextStyle(
+                  //         fontSize: 16,
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
+                ],
+              ),
+            ),
+          ],
+        ));
   }
 }
 

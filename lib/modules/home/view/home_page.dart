@@ -14,17 +14,12 @@ class HomePage extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(100.0),
         child: AppBar(
-          // leading: ,
           elevation: 0,
           backgroundColor: ColorName.white,
           automaticallyImplyLeading: false,
           flexibleSpace: Container(
             decoration: const BoxDecoration(
               color: ColorName.blue,
-              // borderRadius: BorderRadius.only(
-              //   bottomLeft: Radius.circular(16.0),
-              //   bottomRight: Radius.circular(16.0),
-              // ),
             ),
             child: Padding(
               padding: const EdgeInsets.all(16),
@@ -83,7 +78,7 @@ class HomePage extends StatelessWidget {
           children: [
             Container(
               color: ColorName.blue,
-              height: 50,
+              height: 60,
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
@@ -105,7 +100,7 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                   padding: const EdgeInsets.all(16),
-                  height: 80,
+                  height: 90,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -180,7 +175,7 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                     padding: const EdgeInsets.all(16),
-                    height: 200,
+                    height: 210,
                     width: 100,
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
@@ -553,7 +548,7 @@ Widget _buildInfoItem(SvgPicture icon, String title, String value) {
               Text(
                 '\$${value.toString()}',
                 style: const TextStyle(
-                  fontSize: 18.0, // Ganti dengan warna teks yang diinginkan
+                  fontSize: 18.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),

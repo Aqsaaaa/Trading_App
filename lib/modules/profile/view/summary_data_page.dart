@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:trading_app/modules/profile/view/my_charts_list_page.dart';
 
 import '../../../../gen/assets.gen.dart';
 import '../../../gen/colors.gen.dart';
@@ -22,7 +23,7 @@ class SummaryDataPage extends StatelessWidget {
             Icons.arrow_back,
             color: Colors.black,
           ),
-          onPressed: () => context.go('/AddChartsPage'),
+          onPressed: () => context.go('/AddMyCharts'),
         ),
         title: const Text(
           'Add Charts List',
@@ -79,7 +80,97 @@ class SummaryDataPage extends StatelessWidget {
               const Divider(
                 color: ColorName.lightGrey,
                 height: 5,
-              )
+              ),
+              const SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                          height: 25,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(4)),
+                            border: Border.all(color: ColorName.lightGrey),
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 8,
+                            ),
+                            child: Row(
+                              children: [
+                                Icon(Icons.remove_red_eye,
+                                    color: ColorName.lightGrey),
+                                SizedBox(width: 8),
+                                Text(
+                                  'Preview',
+                                  style: TextStyle(color: ColorName.lightGrey),
+                                )
+                              ],
+                            ),
+                          )),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                          height: 25,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(4)),
+                            border: Border.all(color: Colors.blue),
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 8),
+                            child: Row(
+                              children: [
+                                Text(
+                                  'Save Draft',
+                                  style: TextStyle(color: Colors.blue),
+                                )
+                              ],
+                            ),
+                          )),
+                      const SizedBox(
+                        width: 16,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const MyChartsListPage(),
+                            ),
+                          );
+                        },
+                        child: Container(
+                          height: 25,
+                          decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(4)),
+                            border: Border.all(color: Colors.blue),
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 8),
+                            child: Row(
+                              children: [
+                                Text(
+                                  'Submit',
+                                  style: TextStyle(color: ColorName.white),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ],
           ),
         ),

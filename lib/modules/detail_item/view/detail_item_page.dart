@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../gen/assets.gen.dart';
@@ -74,7 +75,18 @@ class DetailItemPage extends StatelessWidget {
                     ],
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      if (MediaQuery.of(context).orientation ==
+                          Orientation.portrait) {
+                        SystemChrome.setPreferredOrientations([
+                          DeviceOrientation.landscapeRight,
+                        ]);
+                      } else {
+                        SystemChrome.setPreferredOrientations([
+                          DeviceOrientation.portraitUp,
+                        ]);
+                      }
+                    },
                     child: const Icon(
                       Icons.screen_rotation_outlined,
                       color: ColorName.lightGrey,

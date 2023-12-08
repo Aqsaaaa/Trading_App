@@ -143,7 +143,7 @@ class WalletPage extends StatelessWidget {
                     ],
                     border: Border.all(color: ColorName.blue)),
                 padding: const EdgeInsets.all(16),
-                height: 230,
+                height: 250,
                 width: 100,
                 child: const Padding(
                   padding: EdgeInsets.all(6),

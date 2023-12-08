@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use_from_same_package
 
 import 'package:flutter/material.dart';
+import 'package:trading_app/modules/signal/view/signal_page.dart';
 
 import '../../gen/assets.gen.dart';
 import '../charts/view/charts_page.dart';
@@ -21,6 +22,7 @@ class _BottomBarState extends State<BottomBar> {
     const HomePage(),
     const ChartsPage(),
     const DisplayedPage(),
+    const SignalPage(),
   ];
 
   @override
@@ -37,21 +39,31 @@ class _BottomBarState extends State<BottomBar> {
         items: [
           BottomNavigationBarItem(
             icon: _currentIndex == 0
-                ? Assets.icon.home.svg(color: Colors.blue)
-                : Assets.icon.home.svg(),
+                ? Assets.icon.home.svg(color: Colors.orange)
+                : Assets.icon.home.svg(color: Colors.grey),
             label: 'Home',
+            activeIcon: Assets.icon.home.svg(color: Colors.orange),
           ),
           BottomNavigationBarItem(
             icon: _currentIndex == 1
-                ? Assets.icon.allCharts.svg(color: Colors.blue)
-                : Assets.icon.allCharts.svg(),
+                ? Assets.icon.allCharts.svg(color: Colors.orange)
+                : Assets.icon.allCharts.svg(color: Colors.grey),
             label: 'All Charts',
+            activeIcon: Assets.icon.allCharts.svg(color: Colors.orange),
           ),
           BottomNavigationBarItem(
             icon: _currentIndex == 2
-                ? Assets.icon.displayed.svg(color: Colors.blue)
-                : Assets.icon.displayed.svg(),
+                ? Assets.icon.displayed.svg(color: Colors.orange)
+                : Assets.icon.displayed.svg(color: Colors.grey),
             label: 'Displayed',
+            activeIcon: Assets.icon.displayed.svg(color: Colors.orange),
+          ),
+          BottomNavigationBarItem(
+            icon: _currentIndex == 3
+                ? Assets.icon.signal.svg(color: Colors.orange)
+                : Assets.icon.signal.svg(color: Colors.grey),
+            label: 'Signal',
+            activeIcon: Assets.icon.signal.svg(color: Colors.orange),
           ),
         ],
       ),

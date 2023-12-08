@@ -34,6 +34,107 @@ class FormMyAccountPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
+              'Full Name',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            SizedBox(
+              height: 35,
+              child: TextFormField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  contentPadding: const EdgeInsets.all(8), // Add this line
+                ),
+                initialValue: 'Ahmad Solikin',
+              ),
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              'Username',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            SizedBox(
+              height: 35,
+              child: TextFormField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  contentPadding: const EdgeInsets.all(8), // Add this line
+                ),
+                initialValue: 'Solikinn',
+              ),
+            ),
+            const SizedBox(height: 8),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  'Gender',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 8),
+                SizedBox(
+                  child: DropdownButton<String>(
+                    value: 'Male',
+                    onChanged: (String? newValue) {
+                      // Add your logic here to handle the selected value
+                    },
+                    items: <String>[
+                      'Male',
+                      'Female'
+                    ] // Add more options here if needed
+                        .map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              'Country',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            SizedBox(
+              height: 35,
+              child: TextFormField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  contentPadding: const EdgeInsets.all(8), // Add this line
+                ),
+                initialValue: 'Indonesia',
+              ),
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              'City',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            SizedBox(
+              height: 35,
+              child: TextFormField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  contentPadding: const EdgeInsets.all(8), // Add this line
+                ),
+                initialValue: 'Jakarta',
+              ),
+            ),
+            const SizedBox(height: 8),
+            const Text(
               'Email',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),

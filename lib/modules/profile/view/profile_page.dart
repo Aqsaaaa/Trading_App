@@ -103,36 +103,7 @@ class ProfilePage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 16),
-                GestureDetector(
-                  onTap: () => context.go('/MyProfile'),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          Assets.icon.user2.svg(),
-                          const SizedBox(width: 8),
-                          const Text(
-                            'My Profile',
-                            style: TextStyle(
-                              fontSize: 16,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const Icon(
-                        Icons.arrow_forward_ios_rounded,
-                        color: ColorName.lightGrey,
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 8),
-                const Divider(
-                  thickness: 1,
-                  color: ColorName.lightGrey,
-                ),
-                const SizedBox(height: 8),
+               const SizedBox(height: 8),
                 GestureDetector(
                   onTap: () => context.go('/MyAccount'),
                   child: Row(
