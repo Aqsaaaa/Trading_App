@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:trading_app/gen/colors.gen.dart';
 import 'package:trading_app/modules/expansion_panel/expansion_panel.dart';
-import 'package:trading_app/modules/wallet/view/deposit_page.dart';
 
 import '../../../../gen/assets.gen.dart';
 
@@ -84,14 +84,7 @@ class BriPage extends StatelessWidget {
               Icons.arrow_back,
               color: Colors.white,
             ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => const DepositPage(),
-                ),
-              );
-            },
+            onPressed: () => context.go('/Deposit'),
           ),
           elevation: 0,
           backgroundColor: ColorName.white,
@@ -237,20 +230,20 @@ class BriPage extends StatelessWidget {
                   const SizedBox(height: 8),
                   ExpansionPanelListExample(
                     data: generateItems(),
-                  )
+                  ),
                 ],
               ),
             ),
-            // const SizedBox(height: 8),
-            // const Text(
-            //   'Payment Instructions',
-            //   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-            // ),
-            // const SizedBox(height: 8),
-            // ExpansionPanelListExample(data: generateItems(3)),
-          )
+          ),
         ],
       ),
+      // const SizedBox(height: 8),
+      // const Text(
+      //   'Payment Instructions',
+      //   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+      // ),
+      // const SizedBox(height: 8),
+      // ExpansionPanelListExample(data: generateItems(3)),
     );
   }
 }
