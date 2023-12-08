@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:trading_app/gen/colors.gen.dart';
+import 'package:trading_app/modules/detail_item/view/detail_item_page.dart';
+import 'package:trading_app/modules/dialog/dialog_confirm.dart';
 
 import '../../../gen/assets.gen.dart';
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:trading_app/gen/colors.gen.dart';
+import 'package:trading_app/modules/profile/view/add_charts_page.dart';
+import 'package:trading_app/modules/profile/view/profile_page.dart';
 
 import '../../../gen/assets.gen.dart';
 
@@ -18,12 +19,18 @@ class MyChartsListPage extends StatelessWidget {
           backgroundColor: ColorName.white,
           elevation: 0,
           leading: IconButton(
-            icon: const Icon(
-              Icons.arrow_back,
-              color: Colors.black,
-            ),
-            onPressed: () => context.go('/Profile'),
-          ),
+              icon: const Icon(
+                Icons.arrow_back,
+                color: Colors.black,
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const ProfilePage(),
+                  ),
+                );
+              }),
           title: const Text(
             'My Charts',
             style: TextStyle(
@@ -39,7 +46,14 @@ class MyChartsListPage extends StatelessWidget {
               child: Align(
                 alignment: Alignment.centerRight,
                 child: GestureDetector(
-                  onTap: () => context.go('/AddMyCharts'),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const AddChartsPage(),
+                      ),
+                    );
+                  },
                   child: const Text(
                     '+ Add',
                     style: TextStyle(color: ColorName.blue, fontSize: 20),

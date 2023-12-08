@@ -1,8 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:trading_app/modules/landing_page/landing_page.dart';
+import 'package:trading_app/modules/login/view/login_page.dart';
+import 'package:trading_app/modules/register/view/verify_page.dart';
 
 import '../../../gen/assets.gen.dart';
 import '../../../gen/colors.gen.dart';
@@ -30,7 +31,7 @@ class _RegisterPageState extends State<RegisterPage> {
             color: Colors.black,
           ),
           onPressed: () {
-            Navigator.pushReplacement(
+            Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (_) => const LandingPage(),
@@ -205,7 +206,14 @@ class _RegisterPageState extends State<RegisterPage> {
                 children: [
                   const Text("Already have an account?"),
                   TextButton(
-                    onPressed: () => context.go('/Login'),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const LoginPage(),
+                        ),
+                      );
+                    },
                     child: const Text(
                       'Login',
                       style: TextStyle(
@@ -218,7 +226,14 @@ class _RegisterPageState extends State<RegisterPage> {
                 ],
               ),
               ElevatedButton(
-                onPressed: () => context.go('/verify'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => VerifyPage(),
+                    ),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   side: const BorderSide(color: ColorName.blue),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:trading_app/modules/expansion_panel/expansion_panel.dart';
 import 'package:trading_app/modules/withdraw/confirm_withdraw_page.dart';
 
@@ -392,7 +391,7 @@ Widget _bankAccount(
       children: [
         Row(
           children: [
-            if (showPrependIcon == true) Icon(Icons.chevron_left),
+            if (showPrependIcon == true) const Icon(Icons.chevron_left),
             Assets.icon.bri.svg(),
             const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -414,7 +413,7 @@ Widget _bankAccount(
             ),
           ],
         ),
-        if (showAppendIcon == true) Icon(Icons.chevron_right_rounded)
+        if (showAppendIcon == true) const Icon(Icons.chevron_right_rounded)
       ],
     ),
   );
@@ -451,8 +450,8 @@ Widget _withdrawHistory(BuildContext context) {
 }
 
 Widget _modalBottomSheet(BuildContext context) {
-  final _formKey = GlobalKey<FormState>();
-  TextEditingController _moneyController = TextEditingController();
+  final formKey = GlobalKey<FormState>();
+  TextEditingController moneyController = TextEditingController();
 
   return GestureDetector(
     onTap: () {
@@ -460,9 +459,9 @@ Widget _modalBottomSheet(BuildContext context) {
     },
     child: Container(
       height: 500.0,
-      padding: EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       child: Form(
-        key: _formKey,
+        key: formKey,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           mainAxisSize: MainAxisSize.min,
@@ -471,9 +470,9 @@ Widget _modalBottomSheet(BuildContext context) {
               children: [
                 _bankAccount(context, true, false),
                 TextFormField(
-                  controller: _moneyController,
+                  controller: moneyController,
                   keyboardType: TextInputType.number,
-                  decoration: InputDecoration(labelText: 'Enter Amount'),
+                  decoration: const InputDecoration(labelText: 'Enter Amount'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter an amount';

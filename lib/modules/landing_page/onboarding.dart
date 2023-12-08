@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:trading_app/modules/landing_page/content_slide.dart';
+import 'package:trading_app/modules/register/view/register_page.dart';
 
 import '../../gen/colors.gen.dart';
 
@@ -114,7 +114,12 @@ class _OnbordingState extends State<Onbording> {
                   ElevatedButton.icon(
                     onPressed: () {
                       if (currentIndex == contents.length - 1) {
-                        context.go('/Register');
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const RegisterPage(),
+                          ),
+                        );
                       }
                       _controller.nextPage(
                         duration: const Duration(milliseconds: 100),

@@ -36,7 +36,7 @@ class ConfirmWithdrawPage extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 const Text(
                   'Nominal',
                   style: TextStyle(
@@ -51,7 +51,7 @@ class ConfirmWithdrawPage extends StatelessWidget {
                           bottom: BorderSide(
                     color: Colors.grey.shade300,
                   ))),
-                  child: Text(
+                  child: const Text(
                     'Rp 2.000.000',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -60,46 +60,46 @@ class ConfirmWithdrawPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 _bankAccount(context, false, false),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 Divider(thickness: 1, color: Colors.grey.shade300),
-                SizedBox(height: 8),
-                Text('Withdraw Detail'),
-                SizedBox(height: 16),
-                Row(
+                const SizedBox(height: 8),
+                const Text('Withdraw Detail'),
+                const SizedBox(height: 16),
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Nominal'),
                     Text('Rp 2.000.000'),
                   ],
                 ),
-                SizedBox(height: 8),
-                Row(
+                const SizedBox(height: 8),
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Transfer to account'),
                     Text('Rifky S'),
                   ],
                 ),
-                SizedBox(height: 8),
-                Row(
+                const SizedBox(height: 8),
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Bank'),
                     Text('Bank Rakyat Indonesia'),
                   ],
                 ),
-                SizedBox(height: 8),
-                Row(
+                const SizedBox(height: 8),
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Admin Fee'),
                     Text('Rp 5.000'),
                   ],
                 ),
-                SizedBox(height: 8),
-                Row(
+                const SizedBox(height: 8),
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Total'),
@@ -109,7 +109,7 @@ class ConfirmWithdrawPage extends StatelessWidget {
               ],
             ),
             Container(
-              margin: EdgeInsets.only(bottom: 8),
+              margin: const EdgeInsets.only(bottom: 8),
               width: double.infinity,
               child: ElevatedButton(
                 style: const ButtonStyle(
@@ -153,7 +153,7 @@ Widget _bankAccount(
       children: [
         Row(
           children: [
-            if (showPrependIcon == true) Icon(Icons.chevron_left),
+            if (showPrependIcon == true) const Icon(Icons.chevron_left),
             Assets.icon.bri.svg(),
             const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -175,7 +175,7 @@ Widget _bankAccount(
             ),
           ],
         ),
-        if (showAppendIcon == true) Icon(Icons.chevron_right_rounded)
+        if (showAppendIcon == true) const Icon(Icons.chevron_right_rounded)
       ],
     ),
   );

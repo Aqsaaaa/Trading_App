@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import '../../gen/colors.gen.dart';
 
 class DialogOptionButton extends StatefulWidget {
-  const DialogOptionButton({Key? key});
+  const DialogOptionButton({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _DialogOptionButtonState createState() => _DialogOptionButtonState();
 }
 
@@ -15,14 +16,13 @@ class _DialogOptionButtonState extends State<DialogOptionButton> {
   @override
   Widget build(BuildContext context) {
     return Dialog(
+      backgroundColor: ColorName.white,
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(8),
           side: const BorderSide(
             color: ColorName.blue,
             width: 2,
-          )
-      ),
-
+          )),
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -36,10 +36,10 @@ class _DialogOptionButtonState extends State<DialogOptionButton> {
                 onPressed: () {
                   // Handle button press for Option 1
                   setState(() {
-                    selectedOption = 'Option 1';
+                    selectedOption = '4 Weeks = 20';
                   });
                 },
-                child: const Text('Option 1'),
+                child: const Text('4 Weeks = 20'),
               ),
             ),
             SizedBox(
@@ -48,30 +48,30 @@ class _DialogOptionButtonState extends State<DialogOptionButton> {
                 onPressed: () {
                   // Handle button press for Option 2
                   setState(() {
-                    selectedOption = 'Option 2';
+                    selectedOption = '3 Weeks = 15';
                   });
                 },
-                child: const Text('Option 2'),
+                child: const Text('3 Weeks = 15'),
               ),
             ),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  // Handle button press for Option 3
+                  // Handle button press for 2 Weeks = 10
                   setState(() {
-                    selectedOption = 'Option 3';
+                    selectedOption = '2 Weeks = 10';
                   });
                 },
-                child: const Text('Option 3'),
+                child: const Text('2 Weeks = 10'),
               ),
             ),
             const SizedBox(height: 16),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 SizedBox(
-                  width: 115,
+                  width: 100,
                   child: ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor:
@@ -81,7 +81,7 @@ class _DialogOptionButtonState extends State<DialogOptionButton> {
                       // Handle cancel button press
                       Navigator.pop(context); // Close the dialog
                     },
-                    child: Text(
+                    child: const Text(
                       'Cancel',
                       style: TextStyle(color: ColorName.white),
                     ),
@@ -89,7 +89,7 @@ class _DialogOptionButtonState extends State<DialogOptionButton> {
                 ),
                 const SizedBox(width: 8),
                 SizedBox(
-                  width: 115,
+                  width: 100,
                   child: ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor:
@@ -100,8 +100,8 @@ class _DialogOptionButtonState extends State<DialogOptionButton> {
                       Navigator.pop(context,
                           selectedOption); // Close the dialog with the selected option
                     },
-                    child: Text(
-                      'Subscribe',
+                    child: const Text(
+                      'Confirm',
                       style: TextStyle(color: ColorName.white),
                     ),
                   ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:trading_app/gen/colors.gen.dart';
+import 'package:trading_app/modules/wallet/view/instruction/bri_page.dart';
+import 'package:trading_app/modules/wallet/view/wallet_page.dart';
 
 import '../../../gen/assets.gen.dart';
 
@@ -18,7 +19,14 @@ class DepositPage extends StatelessWidget {
                   Icons.arrow_back,
                   color: Colors.white,
                 ),
-                onPressed: () => context.go('/Wallet')),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const WalletPage(),
+                    ),
+                  );
+                }),
             elevation: 0,
             backgroundColor: ColorName.white,
             automaticallyImplyLeading: false,
@@ -116,7 +124,14 @@ class DepositPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           GestureDetector(
-                            onTap: () => context.go('/Bri'),
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => const BriPage(),
+                                ),
+                              );
+                            },
                             child: Row(
                               children: [
                                 Assets.icon.bri.svg(),

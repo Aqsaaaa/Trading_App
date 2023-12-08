@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import '../../gen/colors.gen.dart';
 
 class DialogConfirm extends StatefulWidget {
-  const DialogConfirm({Key? key});
+  const DialogConfirm({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _DialogConfirmState createState() => _DialogConfirmState();
 }
 
@@ -22,14 +23,14 @@ class _DialogConfirmState extends State<DialogConfirm> {
             width: 2,
           )),
       child: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(24),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text('Are you sure want to unsubscribe this charts?',
+            const Text('Are you sure want to unsubscribe this charts?',
                 textAlign: TextAlign.center),
-            const SizedBox(height: 21),
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -44,13 +45,12 @@ class _DialogConfirmState extends State<DialogConfirm> {
                       // Handle cancel button press
                       Navigator.pop(context); // Close the dialog
                     },
-                    child: Text(
+                    child: const Text(
                       'Cancel',
                       style: TextStyle(color: ColorName.white),
                     ),
                   ),
                 ),
-                const SizedBox(width: 8),
                 SizedBox(
                   width: 130,
                   child: ElevatedButton(
@@ -63,7 +63,7 @@ class _DialogConfirmState extends State<DialogConfirm> {
                       Navigator.pop(context,
                           selectedOption); // Close the dialog with the selected option
                     },
-                    child: Text(
+                    child: const Text(
                       'Unsubscribe',
                       style: TextStyle(color: ColorName.white),
                     ),

@@ -87,7 +87,7 @@ class ProfileInfoWidget extends StatelessWidget {
                     ),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 6, vertical: 2),
+                          horizontal: 6, vertical: 4),
                       child: Text(
                         subscribe,
                         style: const TextStyle(color: Colors.white),
