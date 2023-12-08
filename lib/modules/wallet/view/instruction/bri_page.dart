@@ -8,7 +8,7 @@ import '../../../../gen/assets.gen.dart';
 class BriPage extends StatelessWidget {
   const BriPage({Key? key}) : super(key: key);
 
-  List<Item> generateItems(int numberOfItems) {
+  List<Item> generateItems() {
     return [
       Item(
         headerValue: 'Internet Banking BRI (Mobile Version)',
