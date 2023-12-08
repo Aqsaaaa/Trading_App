@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:trading_app/gen/colors.gen.dart';
+import 'package:trading_app/modules/notification/view/notification_page.dart';
 import 'package:trading_app/modules/profile/view/profile_page.dart';
 import 'package:trading_app/modules/wallet/view/wallet_page.dart';
 
@@ -71,7 +72,11 @@ class HomePage extends StatelessWidget {
                       ),
                       IconButton(
                         icon: Assets.icon.notification.svg(),
-                        onPressed: () {},
+                        onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => const NotificationPage()),
+                        ),
                       ),
                     ],
                   ),

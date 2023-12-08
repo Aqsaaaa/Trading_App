@@ -5,6 +5,153 @@ import 'package:go_router/go_router.dart';
 import '../../../gen/assets.gen.dart';
 import '../../../gen/colors.gen.dart';
 
+class ItemModal extends StatelessWidget {
+  const ItemModal({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.red),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(8),
+            child: Row(
+              children: [
+                Column(
+                  children: [
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: ClipOval(
+                        child: Container(
+                          width: 50.0,
+                          height: 50.0,
+                          color: ColorName.lightGrey,
+                          child: const Center(child: Text('Foto')),
+                        ),
+                      ),
+                    ),
+                    const Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Ahmad',
+                        style: TextStyle(
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(width: 8),
+                const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'XAAUSD, BUY:1920.00',
+                      style: TextStyle(fontSize: 12),
+                    ),
+                    Text(
+                      'TP: 1930(+1000Pips); SL: 1910(-1000Pips)',
+                      style: TextStyle(fontSize: 12),
+                    ),
+                    Text(
+                      'Submitted on Apriil 23, 2023, 09.30',
+                      style: TextStyle(fontSize: 10),
+                    ),
+                    Text(
+                      'Will be expired on April 24, 2023, 09.30',
+                      style: TextStyle(fontSize: 10),
+                    ),
+                  ],
+                ),
+                //ISI ICON JANGAN LUPAK
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(height: 8)
+      ],
+    );
+  }
+}
+
+void _bottomSheetitem(BuildContext context) {
+  showModalBottomSheet(
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.vertical(
+        top: Radius.circular(12),
+      ),
+    ),
+    context: context,
+    builder: (BuildContext context) {
+      return SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'Chart ref: FX Power',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      Row(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              color: ColorName.green,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: const Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 8, vertical: 2),
+                              child: Text(
+                                'Share Signal',
+                                style: TextStyle(color: ColorName.white),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 4),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: ColorName.blue,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: const Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 8, vertical: 2),
+                              child: Text(
+                                'Provider',
+                                style: TextStyle(color: ColorName.white),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  const Divider(height: 24),
+                  const ItemModal(),
+                  const ItemModal(),
+                  const ItemModal(),
+                ],
+              ),
+            ],
+          ),
+        ),
+      );
+    },
+  );
+}
+
 class DetailItemPage extends StatelessWidget {
   const DetailItemPage({Key? key}) : super(key: key);
 
@@ -131,8 +278,15 @@ class DetailItemPage extends StatelessWidget {
                     children: [
                       const Text('BT : 80% | FT : 80% | ',
                           style: TextStyle(color: ColorName.blue)),
-                      Assets.icon.signal.svg(),
-                      const Text('signals'),
+                      GestureDetector(
+                        onTap: () {
+                          _bottomSheetitem(context);
+                        },
+                        child: Row(children: [
+                          Assets.icon.signal.svg(),
+                          const Text('signals'),
+                        ]),
+                      )
                     ],
                   ),
                 ],

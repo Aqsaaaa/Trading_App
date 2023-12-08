@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trading_app/modules/bottom_bar/bottom_bar.dart';
 import 'package:trading_app/modules/landing_page/landing_page.dart';
 import 'package:trading_app/modules/register/view/register_page.dart';
 
@@ -124,7 +125,7 @@ class VerifyPage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => const RegisterPage(),
+                          builder: (_) => const BottomBar(),
                         ),
                       );
                     },

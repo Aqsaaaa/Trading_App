@@ -1,5 +1,51 @@
 part of '../displayed_page.dart';
 
+void _bottomSheet(BuildContext context) {
+  showModalBottomSheet(
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.vertical(
+        top: Radius.circular(12),
+      ),
+    ),
+    context: context,
+    builder: (BuildContext context) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(
+              children: [
+                Assets.icon.camera.svg(),
+                const SizedBox(width: 8),
+                const Text(
+                  'Take Photo ID Card',
+                  style: TextStyle(
+                    color: ColorName.blue,
+                  ),
+                ),
+              ],
+            ),
+            const Divider(thickness: 1),
+            Row(
+              children: [
+                Assets.icon.upload.svg(),
+                const SizedBox(width: 8),
+                const Text(
+                  'Upload Photo',
+                  style: TextStyle(
+                    color: ColorName.blue,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      );
+    },
+  );
+}
+
 class DisplayedChartsItemWidget extends StatelessWidget {
   const DisplayedChartsItemWidget({Key? key}) : super(key: key);
 
@@ -98,8 +144,15 @@ class DisplayedChartsItemWidget extends StatelessWidget {
                 children: [
                   const Text('BT : 80% | FT : 80% | ',
                       style: TextStyle(color: ColorName.blue)),
-                  Assets.icon.signal.svg(),
-                  const Text('signals'),
+                  GestureDetector(
+                    onTap: () {
+                      _bottomSheet(context);
+                    },
+                    child: Row(children: [
+                      Assets.icon.signal.svg(),
+                      const Text('signals'),
+                    ]),
+                  )
                 ],
               ),
             ],
