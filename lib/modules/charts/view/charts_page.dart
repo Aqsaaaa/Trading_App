@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:trading_app/gen/colors.gen.dart';
 
 import '../../../gen/assets.gen.dart';
+import '../../dialog/dialog_option_button.dart';
 
 part 'widgets/charts_item_widget.dart';
 part 'widgets/search_filter_widget.dart';

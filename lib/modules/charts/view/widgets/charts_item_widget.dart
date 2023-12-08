@@ -43,7 +43,12 @@ class ChartsItemWidget extends StatelessWidget {
                   Column(
                     children: [
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) =>  DialogOptionButton(),
+                          );
+                        },
                         child: Container(
                           decoration: BoxDecoration(
                             color: ColorName.blue,
