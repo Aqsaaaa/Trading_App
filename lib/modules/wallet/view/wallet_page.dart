@@ -2,8 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:go_router/go_router.dart';
 import 'package:trading_app/gen/colors.gen.dart';
+import 'package:trading_app/modules/wallet/view/deposit_page.dart';
+import 'package:trading_app/modules/wallet/view/history_transaction_page.dart';
 import 'package:trading_app/modules/withdraw/withdraw_page.dart';
 
 import '../../../gen/assets.gen.dart';
@@ -24,7 +25,7 @@ class WalletPage extends StatelessWidget {
             Icons.arrow_back,
             color: Colors.black,
           ),
-          onPressed: () => context.go('/Bottombar'),
+          onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
           'Finance',
@@ -43,7 +44,14 @@ class WalletPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               GestureDetector(
-                onTap: () => context.go('/wallet'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const WalletPage(),
+                    ),
+                  );
+                },
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.blue,
@@ -81,7 +89,14 @@ class WalletPage extends StatelessWidget {
                         Row(
                           children: [
                             ElevatedButton(
-                              onPressed: () => context.go('/Deposit'),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => const DepositPage(),
+                                  ),
+                                );
+                              },
                               style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(8),
@@ -197,7 +212,14 @@ class WalletPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   GestureDetector(
-                    onTap: () => context.go('/History'),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const HistoryTransactionPage(),
+                        ),
+                      );
+                    },
                     child: const Text(
                       'See All',
                       style: TextStyle(

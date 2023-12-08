@@ -6,7 +6,14 @@ class DisplayedChartsItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => context.go('/DetailItem'),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => const DetailItemPage(),
+          ),
+        );
+      },
       child: Column(
         children: [
           Row(
@@ -37,7 +44,13 @@ class DisplayedChartsItemWidget extends StatelessWidget {
               Column(
                 children: [
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) =>
+                            const DialogConfirm(),
+                      );
+                    },
                     child: Container(
                       decoration: BoxDecoration(
                         color: Colors.red,

@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
 import 'package:trading_app/gen/colors.gen.dart';
 import 'package:trading_app/modules/transaction_proof/transaction_proof.dart';
+import 'package:trading_app/modules/wallet/view/wallet_page.dart';
 
 import '../../../gen/assets.gen.dart';
 
@@ -24,7 +24,14 @@ class HistoryTransactionPage extends StatelessWidget {
                 Icons.arrow_back,
                 color: Colors.black,
               ),
-              onPressed: () => context.go('/Wallet')),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const WalletPage(),
+                  ),
+                );
+              }),
           bottom: const TabBar(
             isScrollable: true,
             tabs: [

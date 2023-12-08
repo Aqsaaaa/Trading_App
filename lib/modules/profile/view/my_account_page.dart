@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:trading_app/gen/colors.gen.dart';
+import 'package:trading_app/modules/profile/view/form_edit_account_page.dart';
+import 'package:trading_app/modules/profile/view/profile_page.dart';
 
 class MyAccountPage extends StatelessWidget {
   const MyAccountPage({Key? key}) : super(key: key);
@@ -12,12 +13,18 @@ class MyAccountPage extends StatelessWidget {
         backgroundColor: ColorName.white,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          ),
-          onPressed: () => context.go('/profile'),
-        ),
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const ProfilePage(),
+                ),
+              );
+            }),
         title: const Text(
           'My Account',
           style: TextStyle(
@@ -114,7 +121,14 @@ class MyAccountPage extends StatelessWidget {
             SizedBox(
               width: double.infinity, // Add the width property here
               child: ElevatedButton(
-                onPressed: () => context.go('/FormMyAccount'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const FormMyAccountPage(),
+                    ),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
                   backgroundColor: ColorName.blue,

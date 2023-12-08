@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:trading_app/gen/colors.gen.dart';
+import 'package:trading_app/modules/profile/view/my_account_page.dart';
 
 class FormMyAccountPage extends StatelessWidget {
   const FormMyAccountPage({Key? key}) : super(key: key);
@@ -12,12 +12,18 @@ class FormMyAccountPage extends StatelessWidget {
         backgroundColor: ColorName.white,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          ),
-          onPressed: () => context.go('/MyAccount'),
-        ),
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const MyAccountPage(),
+                ),
+              );
+            }),
         title: const Text(
           'My Account',
           style: TextStyle(

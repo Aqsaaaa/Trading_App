@@ -6,7 +6,14 @@ class ChartsItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => context.go('/DetailItem'),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => const DetailItemPage(),
+          ),
+        );
+      },
       child: Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8), color: ColorName.lightBlue),
@@ -46,7 +53,8 @@ class ChartsItemWidget extends StatelessWidget {
                         onTap: () {
                           showDialog(
                             context: context,
-                            builder: (BuildContext context) =>  DialogOptionButton(),
+                            builder: (BuildContext context) =>
+                                const DialogOptionButton(),
                           );
                         },
                         child: Container(
@@ -56,9 +64,9 @@ class ChartsItemWidget extends StatelessWidget {
                           ),
                           child: const Padding(
                             padding: EdgeInsets.symmetric(
-                                horizontal: 16, vertical: 8),
+                                horizontal: 16, vertical: 4),
                             child: Text(
-                              'Subscribe',
+                              'Subcribe',
                               style: TextStyle(color: Colors.white),
                             ),
                           ),
@@ -66,7 +74,7 @@ class ChartsItemWidget extends StatelessWidget {
                       ),
                       const SizedBox(height: 2),
                       const Text(
-                        'Free 3 days',
+                        'Free 3 Days',
                         style: TextStyle(color: ColorName.green),
                       ),
                     ],

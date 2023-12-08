@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:trading_app/modules/expansion_panel/expansion_panel.dart';
 
 import '../../gen/assets.gen.dart';

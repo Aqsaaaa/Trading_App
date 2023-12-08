@@ -1,7 +1,10 @@
 // ignore_for_file: deprecated_member_use_from_same_package
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:trading_app/modules/profile/view/change_password_page.dart';
+import 'package:trading_app/modules/profile/view/my_account_page.dart';
+import 'package:trading_app/modules/profile/view/my_charts_list_page.dart';
+import 'package:trading_app/modules/profile/view/verification_page.dart';
 
 import '../../../gen/assets.gen.dart';
 import '../../../gen/colors.gen.dart';
@@ -21,7 +24,7 @@ class ProfilePage extends StatelessWidget {
             Icons.arrow_back,
             color: Colors.white,
           ),
-          onPressed: () => context.go('/bottombar'),
+          onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
           'Profile',
@@ -103,9 +106,16 @@ class ProfilePage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 16),
-               const SizedBox(height: 8),
+                const SizedBox(height: 8),
                 GestureDetector(
-                  onTap: () => context.go('/MyAccount'),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const MyAccountPage(),
+                      ),
+                    );
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -135,7 +145,14 @@ class ProfilePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 GestureDetector(
-                  onTap: () => context.go('/ChangePassword'),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const ChangePasswordPage(),
+                      ),
+                    );
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -192,7 +209,14 @@ class ProfilePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 GestureDetector(
-                  onTap: () => context.go('/Verification'),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const VerificationPage(),
+                      ),
+                    );
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -258,7 +282,14 @@ class ProfilePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 GestureDetector(
-                  onTap: () => context.go('/MyChartsList'),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const MyChartsListPage(),
+                      ),
+                    );
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

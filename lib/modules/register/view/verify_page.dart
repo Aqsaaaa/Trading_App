@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:trading_app/modules/landing_page/landing_page.dart';
+import 'package:trading_app/modules/register/view/register_page.dart';
 
 import '../../../gen/colors.gen.dart';
 
@@ -56,7 +57,14 @@ class VerifyPage extends StatelessWidget {
             Icons.arrow_back,
             color: Colors.black,
           ),
-          onPressed: () => context.go('/Landing'),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => const LandingPage(),
+              ),
+            );
+          },
         ),
       ),
       body: SingleChildScrollView(
@@ -100,7 +108,7 @@ class VerifyPage extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () => context.go('/Bottombar'),
+                onPressed: () => Navigator.pop(context),
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   side: const BorderSide(color: ColorName.blue),
@@ -112,7 +120,14 @@ class VerifyPage extends StatelessWidget {
                 children: [
                   const Center(child: Text("Tidak menerima OTP?")),
                   TextButton(
-                    onPressed: () => context.go('/Register'),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const RegisterPage(),
+                        ),
+                      );
+                    },
                     child: const Text(
                       'Kirim Ulang Kode',
                       style: TextStyle(

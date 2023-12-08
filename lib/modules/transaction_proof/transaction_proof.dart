@@ -27,7 +27,7 @@ class TransactionProof extends StatelessWidget {
             color: Colors.white,
           ),
           onPressed: () {
-            Navigator.pushReplacement(
+            Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (_) => const HistoryTransactionPage(),
