@@ -115,9 +115,9 @@ void _bottomSheetMyChartsItem(BuildContext context) {
     ),
     context: context,
     builder: (BuildContext context) {
-      return const SingleChildScrollView(
+      return SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -126,18 +126,27 @@ void _bottomSheetMyChartsItem(BuildContext context) {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.edit_outlined,
-                          ),
-                          SizedBox(width: 8),
-                          Text(
-                            'Edite',
-                          ),
-                        ],
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => const EditeChartsPage()),
+                          );
+                        },
+                        child: const Row(
+                          children: [
+                            Icon(
+                              Icons.edit_outlined,
+                            ),
+                            SizedBox(width: 8),
+                            Text(
+                              'Edite',
+                            ),
+                          ],
+                        ),
                       ),
-                      Row(
+                      const Row(
                         children: [
                           Padding(
                               padding: EdgeInsets.symmetric(
@@ -147,8 +156,8 @@ void _bottomSheetMyChartsItem(BuildContext context) {
                       ),
                     ],
                   ),
-                  Divider(height: 24),
-                  Row(
+                  const Divider(height: 24),
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Row(
@@ -170,8 +179,8 @@ void _bottomSheetMyChartsItem(BuildContext context) {
                       ),
                     ],
                   ),
-                  Divider(height: 24),
-                  Row(
+                  const Divider(height: 24),
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Row(
@@ -195,22 +204,32 @@ void _bottomSheetMyChartsItem(BuildContext context) {
                       ),
                     ],
                   ),
-                  Divider(height: 24),
+                  const Divider(height: 24),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.add,
-                          ),
-                          SizedBox(width: 8),
-                          Text(
-                            'Add BT/FT',
-                          ),
-                        ],
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const AddBtFtPage(),
+                            ),
+                          );
+                        },
+                        child: const Row(
+                          children: [
+                            Icon(
+                              Icons.add,
+                            ),
+                            SizedBox(width: 8),
+                            Text(
+                              'Add BT/FT',
+                            ),
+                          ],
+                        ),
                       ),
-                      Row(
+                      const Row(
                         children: [
                           Padding(
                               padding: EdgeInsets.symmetric(
@@ -220,8 +239,8 @@ void _bottomSheetMyChartsItem(BuildContext context) {
                       ),
                     ],
                   ),
-                  Divider(height: 24),
-                  Row(
+                  const Divider(height: 24),
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Row(

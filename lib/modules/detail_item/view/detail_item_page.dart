@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../../gen/assets.gen.dart';
 import '../../../gen/colors.gen.dart';
@@ -162,7 +161,7 @@ class DetailItemPage extends StatelessWidget {
       appBar: AppBar(
         leading: GestureDetector(
           onTap: () {
-            context.pop();
+            Navigator.pop(context);
           },
           child: const Icon(Icons.arrow_back_rounded, color: Colors.black),
         ),
