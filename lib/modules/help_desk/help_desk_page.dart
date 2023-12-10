@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:trading_app/gen/colors.gen.dart';
+import 'package:trading_app/modules/expansion_panel/expandable_menu.dart';
+import 'package:trading_app/modules/expansion_panel/expansion_panel.dart';
 
 class HelpDeskPage extends StatefulWidget {
   const HelpDeskPage({Key? key}) : super(key: key);
@@ -60,6 +62,11 @@ class _HelpDeskPageState extends State<HelpDeskPage>
             ),
           ),
         ),
+      ),
+      body: Container(
+        color: ColorName.white,
+        margin: EdgeInsets.symmetric(horizontal: 16),
+        child: ExpandableMenu(),
       ),
     );
   }
