@@ -68,7 +68,8 @@ class ItemModal extends StatelessWidget {
                     ),
                   ],
                 ),
-                //ISI ICON JANGAN LUPAK
+                const SizedBox(width: 8),
+                Assets.images.dangerSignal.image(height: 60)
               ],
             ),
           ),
@@ -160,7 +161,9 @@ class DetailItemPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(
-          onTap: () => context.go('/BottomBar'),
+          onTap: () {
+            context.pop();
+          },
           child: const Icon(Icons.arrow_back_rounded, color: Colors.black),
         ),
         backgroundColor: Colors.transparent,
@@ -177,6 +180,7 @@ class DetailItemPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Assets.images.profileCharts.image(width: 40),
+                  const SizedBox(width: 8),
                   const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -210,7 +214,7 @@ class DetailItemPage extends StatelessWidget {
                           ),
                           child: const Padding(
                             padding: EdgeInsets.symmetric(
-                                horizontal: 16, vertical: 6),
+                                horizontal: 12, vertical: 4),
                             child: Text(
                               'Subscribe',
                               style: TextStyle(color: ColorName.white),

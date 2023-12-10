@@ -17,14 +17,7 @@ class AddChartsPage extends StatelessWidget {
             Icons.arrow_back,
             color: Colors.black,
           ),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (_) => const AddChartsPage(),
-              ),
-            );
-          },
+          onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
           'Add Charts List',

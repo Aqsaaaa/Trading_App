@@ -35,7 +35,7 @@ class SignalPage extends StatelessWidget {
                     Column(
                       children: [
                         Text(
-                          'Provider & Subscription',
+                          'Signal Provider List',
                           style: TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,

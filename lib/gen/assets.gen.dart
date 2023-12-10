@@ -164,6 +164,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/charts.png
   AssetGenImage get charts => const AssetGenImage('assets/images/charts.png');
 
+  /// File path: assets/images/danger_signal.png
+  AssetGenImage get dangerSignal =>
+      const AssetGenImage('assets/images/danger_signal.png');
+
   /// File path: assets/images/example_photo.png
   AssetGenImage get examplePhoto =>
       const AssetGenImage('assets/images/example_photo.png');
@@ -171,6 +175,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/example_selfie.png
   AssetGenImage get exampleSelfie =>
       const AssetGenImage('assets/images/example_selfie.png');
+
+  /// File path: assets/images/expired_signal.png
+  AssetGenImage get expiredSignal =>
+      const AssetGenImage('assets/images/expired_signal.png');
 
   /// File path: assets/images/landing1.png
   AssetGenImage get landing1 =>
@@ -195,6 +203,14 @@ class $AssetsImagesGen {
   AssetGenImage get profileCharts =>
       const AssetGenImage('assets/images/profile charts.png');
 
+  /// File path: assets/images/sand_signal.png
+  AssetGenImage get sandSignal =>
+      const AssetGenImage('assets/images/sand_signal.png');
+
+  /// File path: assets/images/succes_signal.png
+  AssetGenImage get succesSignal =>
+      const AssetGenImage('assets/images/succes_signal.png');
+
   /// File path: assets/images/youtube.png
   AssetGenImage get youtube => const AssetGenImage('assets/images/youtube.png');
 
@@ -205,14 +221,18 @@ class $AssetsImagesGen {
         brokerDisplay,
         broker,
         charts,
+        dangerSignal,
         examplePhoto,
         exampleSelfie,
+        expiredSignal,
         landing1,
         landing2,
         landing3,
         landing4,
         prodile,
         profileCharts,
+        sandSignal,
+        succesSignal,
         youtube
       ];
 }

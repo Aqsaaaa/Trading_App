@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use_from_same_package
 
 import 'package:flutter/material.dart';
+import 'package:trading_app/modules/profile/view/add_charts_page.dart';
 import 'package:trading_app/modules/profile/view/change_password_page.dart';
 import 'package:trading_app/modules/profile/view/my_account_page.dart';
 import 'package:trading_app/modules/profile/view/my_charts_list_page.dart';
@@ -85,12 +86,18 @@ class ProfilePage extends StatelessWidget {
                       ),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: const Center(
-                      child: Text(
-                        '+  Add Chart List',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
+                    child: Center(
+                      child: GestureDetector(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => const AddChartsPage())),
+                        child: const Text(
+                          '+  Add Chart List',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                          ),
                         ),
                       ),
                     ),

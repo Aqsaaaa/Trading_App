@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trading_app/modules/bottom_bar/bottom_bar.dart';
 import 'package:trading_app/modules/landing_page/landing_page.dart';
-import 'package:trading_app/modules/register/view/register_page.dart';
 
 import '../../../gen/colors.gen.dart';
 
@@ -110,11 +109,10 @@ class VerifyPage extends StatelessWidget {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => const BottomBar(),
-                  )
-                ),
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const BottomBar(),
+                    )),
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   side: const BorderSide(color: ColorName.blue),

@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use_from_same_package
 
 import 'package:flutter/material.dart';
+import 'package:trading_app/modules/help_desk/help_desk_page.dart';
 import 'package:trading_app/modules/signal/view/signal_page.dart';
 
 import '../../gen/assets.gen.dart';
@@ -23,6 +24,7 @@ class _BottomBarState extends State<BottomBar> {
     const ChartsPage(),
     const DisplayedPage(),
     const SignalPage(),
+    const HelpDeskPage(),
   ];
 
   @override
@@ -64,6 +66,13 @@ class _BottomBarState extends State<BottomBar> {
                 : Assets.icon.signal.svg(color: Colors.grey),
             label: 'Signal',
             activeIcon: Assets.icon.signal.svg(color: Colors.orange),
+          ),
+          BottomNavigationBarItem(
+            icon: _currentIndex == 4
+                ? Assets.icon.helpdesk.svg(color: Colors.orange)
+                : Assets.icon.helpdesk.svg(color: Colors.grey),
+            label: 'helpdesk',
+            activeIcon: Assets.icon.helpdesk.svg(color: Colors.orange),
           ),
         ],
       ),

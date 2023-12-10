@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:trading_app/gen/colors.gen.dart';
 import 'package:trading_app/modules/expansion_panel/expansion_panel.dart';
 
@@ -84,7 +83,7 @@ class BriPage extends StatelessWidget {
               Icons.arrow_back,
               color: Colors.white,
             ),
-            onPressed: () => context.go('/Deposit'),
+            onPressed: () => Navigator.pop(context),
           ),
           elevation: 0,
           backgroundColor: ColorName.white,

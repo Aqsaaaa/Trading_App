@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trading_app/gen/colors.gen.dart';
 
-import '../../../gen/assets.gen.dart';
-
 // part 'widget/displayed_item_widget.dart';
 
 class NotificationPage extends StatelessWidget {
