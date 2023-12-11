@@ -1,9 +1,12 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../../gen/colors.gen.dart';
 
 class ExpandableMenu extends StatelessWidget {
-  const ExpandableMenu({Key? key});
+  const ExpandableMenu({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -42,54 +45,42 @@ class ExpandableMenu extends StatelessWidget {
           ),
         ),
         const Divider(height: 0),
-        buildClickableTile(
-            'Registration',
-            <Widget>[const ListTile(title: Text('Example 1'))],
-            context
-        ),
+        buildClickableTile('Registration',
+            <Widget>[const ListTile(title: Text('Example 1'))], context),
+        const Divider(height: 0),
+        buildClickableTile('Charts provider',
+            <Widget>[const ListTile(title: Text('Example 1'))], context),
+        const Divider(height: 0),
+        buildClickableTile('Signals provider',
+            <Widget>[const ListTile(title: Text('Example 1'))], context),
+        const Divider(height: 0),
+        buildClickableTile('Select and read charts',
+            <Widget>[const ListTile(title: Text('Example 1'))], context),
         const Divider(height: 0),
         buildClickableTile(
-            'Charts provider',
-            <Widget>[const ListTile(title: Text('Example 1'))],
-            context
-        ),
-        const Divider(height: 0),
-        buildClickableTile(
-            'Signals provider',
-            <Widget>[const ListTile(title: Text('Example 1'))],
-            context
-        ),
-        const Divider(height: 0),
-        buildClickableTile(
-          'Select and read charts',
-          <Widget>[const ListTile(title: Text('Example 1'))],
-            context
-        ),
-        const Divider(height: 0),
-        buildClickableTile(
-          'Financing',
-          <Widget>[
-            const ListTile(title: Text('How to deposit')),
-            const ListTile(title: Text('How to get earning from upload chart')),
-            const ListTile(title: Text('How to withdraw')),
-          ],
-            context
-        ),
+            'Financing',
+            <Widget>[
+              const ListTile(title: Text('How to deposit')),
+              const ListTile(
+                  title: Text('How to get earning from upload chart')),
+              const ListTile(title: Text('How to withdraw')),
+            ],
+            context),
       ],
     );
   }
 
-  Widget buildClickableTile(String title, List<Widget> children,
-      BuildContext context) {
+  Widget buildClickableTile(
+      String title, List<Widget> children, BuildContext context) {
     return InkWell(
       onTap: () {
         // Handle the tap event here
-        ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text('$title clicked!'),
-            )
-        );
-        print('$title clicked!');
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text('$title clicked!'),
+        ));
+        if (kDebugMode) {
+          print('$title clicked!');
+        }
       },
       child: Column(
         children: [

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:trading_app/gen/assets.gen.dart';
 import 'package:trading_app/gen/colors.gen.dart';
+import 'package:trading_app/modules/dialog/dialog_filter.dart';
 
 part 'widget/signal_item_widget.dart';
+part 'widget/signal_search_filter_widget.dart';
 
 class SignalPage extends StatelessWidget {
   const SignalPage({Key? key}) : super(key: key);
@@ -72,6 +74,8 @@ class SignalPage extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
+                          SignalSearchFilterWidget(),
+                          SizedBox(height: 8),
                           ProfileInfoWidget(
                             name: 'Ahmad',
                             subscribe: 'Subscribed',
@@ -103,6 +107,8 @@ class SignalPage extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
+                          SignalSearchFilterWidget(),
+                          SizedBox(height: 8),
                           ProfileInfoWidget(
                             name: 'Ahmad',
                             subscribe: 'Unsubscribe',

@@ -3,7 +3,7 @@ import 'package:trading_app/gen/colors.gen.dart';
 import 'package:trading_app/modules/profile/view/add_charts_page.dart';
 import 'package:trading_app/modules/profile/view/edite_charts_page.dart';
 import 'package:trading_app/modules/profile/view/profile_page.dart';
-import 'package:trading_app/modules/profile/view/widget/add_bt_ft_page.dart';
+import 'package:trading_app/modules/profile/view/add_bt_ft_page.dart';
 
 import '../../../gen/assets.gen.dart';
 

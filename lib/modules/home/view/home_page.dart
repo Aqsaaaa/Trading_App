@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:trading_app/gen/colors.gen.dart';
+import 'package:trading_app/modules/home/view/see_all_page.dart';
 import 'package:trading_app/modules/notification/view/notification_page.dart';
 import 'package:trading_app/modules/profile/view/profile_page.dart';
 import 'package:trading_app/modules/wallet/view/wallet_page.dart';
@@ -161,10 +162,10 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Flexible(
+                      const Flexible(
                         child: Text(
                           'These charts might be helpful for your trading guidance',
                           style: TextStyle(
@@ -173,12 +174,22 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Text(
-                        'See All',
-                        style: TextStyle(
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.bold,
-                          color: ColorName.blue,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const SeeAllPage(),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'See All',
+                          style: TextStyle(
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.bold,
+                            color: ColorName.blue,
+                          ),
                         ),
                       ),
                     ],

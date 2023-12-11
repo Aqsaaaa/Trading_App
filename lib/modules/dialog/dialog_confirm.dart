@@ -42,8 +42,7 @@ class _DialogConfirmState extends State<DialogConfirm> {
                           MaterialStateProperty.all<Color>(ColorName.blue),
                     ),
                     onPressed: () {
-                      // Handle cancel button press
-                      Navigator.pop(context); // Close the dialog
+                      Navigator.pop(context);
                     },
                     child: const Text(
                       'Cancel',
@@ -59,9 +58,7 @@ class _DialogConfirmState extends State<DialogConfirm> {
                           MaterialStateProperty.all<Color>(ColorName.red),
                     ),
                     onPressed: () {
-                      // Handle subscribe button press
-                      Navigator.pop(context,
-                          selectedOption); // Close the dialog with the selected option
+                      Navigator.pop(context, selectedOption);
                     },
                     child: const Text(
                       'Unsubscribe',

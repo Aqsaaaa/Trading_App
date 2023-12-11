@@ -1,7 +1,7 @@
-part of '../charts_page.dart';
+part of '../signal_page.dart';
 
-class SearchFilterWidget extends StatelessWidget {
-  const SearchFilterWidget({Key? key}) : super(key: key);
+class SignalSearchFilterWidget extends StatelessWidget {
+  const SignalSearchFilterWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

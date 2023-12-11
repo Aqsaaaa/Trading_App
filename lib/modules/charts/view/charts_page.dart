@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:trading_app/gen/colors.gen.dart';
 import 'package:trading_app/modules/detail_item/view/detail_item_page.dart';
+import 'package:trading_app/modules/dialog/dialog_filter.dart';
 
 import '../../../gen/assets.gen.dart';
 import '../../dialog/dialog_option_button.dart';
@@ -118,7 +119,6 @@ class _ChartsPageState extends State<ChartsPage>
                       children: [
                         SearchFilterWidget(),
                         ChartsItemWidget(),
-                        SizedBox(height: 16),
                         ChartsItemWidget(),
                       ],
                     ),
@@ -132,7 +132,6 @@ class _ChartsPageState extends State<ChartsPage>
                       children: [
                         SearchFilterWidget(),
                         ChartsItemWidget(),
-                        SizedBox(height: 16),
                         ChartsItemWidget(),
                       ],
                     ),
@@ -146,7 +145,6 @@ class _ChartsPageState extends State<ChartsPage>
                       children: [
                         SearchFilterWidget(),
                         ChartsItemWidget(),
-                        SizedBox(height: 16),
                         ChartsItemWidget(),
                       ],
                     ),
@@ -160,7 +158,6 @@ class _ChartsPageState extends State<ChartsPage>
                       children: [
                         SearchFilterWidget(),
                         ChartsItemWidget(),
-                        SizedBox(height: 16),
                         ChartsItemWidget(),
                       ],
                     ),

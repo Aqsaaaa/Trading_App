@@ -1,7 +1,7 @@
-part of '../charts_page.dart';
+part of '../see_all_page.dart';
 
-class ChartsItemWidget extends StatelessWidget {
-  const ChartsItemWidget({Key? key}) : super(key: key);
+class SeeAllChartsItemWidget extends StatelessWidget {
+  const SeeAllChartsItemWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:trading_app/gen/colors.gen.dart';
 import 'package:trading_app/modules/detail_item/view/detail_item_page.dart';
 import 'package:trading_app/modules/dialog/dialog_confirm.dart';
+import 'package:trading_app/modules/dialog/dialog_filter.dart';
 
 import '../../../gen/assets.gen.dart';
 
 part 'widget/displayed_item_widget.dart';
+part 'widget/displayed_search_filter_widget.dart';
 
 class DisplayedPage extends StatelessWidget {
   const DisplayedPage({Key? key}) : super(key: key);
@@ -75,6 +77,8 @@ class DisplayedPage extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
+                          DisplayedSearchFilterWidget(),
+                          SizedBox(height: 8),
                           DisplayedChartsItemWidget(),
                           DisplayedChartsItemWidget(),
                           DisplayedChartsItemWidget(),
@@ -90,6 +94,8 @@ class DisplayedPage extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
+                          DisplayedSearchFilterWidget(),
+                          SizedBox(height: 8),
                           DisplayedChartsMyItemWidget(),
                           DisplayedChartsMyItemWidget(),
                           DisplayedChartsMyItemWidget(),

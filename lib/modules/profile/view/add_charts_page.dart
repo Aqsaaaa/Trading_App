@@ -168,50 +168,42 @@ class AddChartsPage extends StatelessWidget {
                 ),
                 items: const [
                   DropdownMenuItem<String>(
-                    value: 'M1',
+                    value: 'Indices',
                     child: Row(
                       children: [
-                        Text('M1'),
+                        Text('Indices'),
                       ],
                     ),
                   ),
                   DropdownMenuItem<String>(
-                    value: 'M5',
+                    value: 'Indices Future',
                     child: Row(
                       children: [
-                        Text('M5'),
+                        Text('Indices Future'),
                       ],
                     ),
                   ),
                   DropdownMenuItem<String>(
-                    value: 'M15',
+                    value: 'Stocks',
                     child: Row(
                       children: [
-                        Text('M15'),
+                        Text('Stocks'),
                       ],
                     ),
                   ),
                   DropdownMenuItem<String>(
-                    value: 'M30',
+                    value: 'Commodities',
                     child: Row(
                       children: [
-                        Text('M30'),
+                        Text('Commodities'),
                       ],
                     ),
                   ),
                   DropdownMenuItem<String>(
-                    value: 'H1',
+                    value: 'Currencies',
                     child: Row(
                       children: [
-                        Text('H1'),
-                      ],
-                    ),
-                  ),
-                  DropdownMenuItem<String>(
-                    value: 'H2',
-                    child: Row(
-                      children: [
-                        Text('H2'),
+                        Text('Currencies'),
                       ],
                     ),
                   ),
@@ -240,54 +232,46 @@ class AddChartsPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   contentPadding: const EdgeInsets.all(8),
-                  hintText: 'Select Pairs',
+                  hintText: 'select market category',
                 ),
                 items: const [
                   DropdownMenuItem<String>(
-                    value: 'M1',
+                    value: 'XAUUSD',
                     child: Row(
                       children: [
-                        Text('M1'),
+                        Text('XAUUSD'),
                       ],
                     ),
                   ),
                   DropdownMenuItem<String>(
-                    value: 'M5',
+                    value: 'GBPJPY',
                     child: Row(
                       children: [
-                        Text('M5'),
+                        Text('GBPJPY'),
                       ],
                     ),
                   ),
                   DropdownMenuItem<String>(
-                    value: 'M15',
+                    value: 'EURUSD',
                     child: Row(
                       children: [
-                        Text('M15'),
+                        Text('EURUSD'),
                       ],
                     ),
                   ),
                   DropdownMenuItem<String>(
-                    value: 'M30',
+                    value: 'EURJPY',
                     child: Row(
                       children: [
-                        Text('M30'),
+                        Text('EURJPY'),
                       ],
                     ),
                   ),
                   DropdownMenuItem<String>(
-                    value: 'H1',
+                    value: 'GBPUSD',
                     child: Row(
                       children: [
-                        Text('H1'),
-                      ],
-                    ),
-                  ),
-                  DropdownMenuItem<String>(
-                    value: 'H2',
-                    child: Row(
-                      children: [
-                        Text('H2'),
+                        Text('GBPUSD'),
                       ],
                     ),
                   ),

@@ -123,18 +123,18 @@ void _bottomSheetMyChartsItem(BuildContext context) {
             children: [
               Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (_) => const EditeChartsPage()),
-                          );
-                        },
-                        child: const Row(
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const EditeChartsPage()),
+                      );
+                    },
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
                           children: [
                             Icon(
                               Icons.edit_outlined,
@@ -145,16 +145,16 @@ void _bottomSheetMyChartsItem(BuildContext context) {
                             ),
                           ],
                         ),
-                      ),
-                      const Row(
-                        children: [
-                          Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 8, vertical: 2),
-                              child: Icon(Icons.navigate_next_rounded)),
-                        ],
-                      ),
-                    ],
+                        Row(
+                          children: [
+                            Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 8, vertical: 2),
+                                child: Icon(Icons.navigate_next_rounded)),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                   const Divider(height: 24),
                   const Row(
@@ -205,19 +205,19 @@ void _bottomSheetMyChartsItem(BuildContext context) {
                     ],
                   ),
                   const Divider(height: 24),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => const AddBtFtPage(),
-                            ),
-                          );
-                        },
-                        child: const Row(
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const AddBtFtPage(),
+                        ),
+                      );
+                    },
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
                           children: [
                             Icon(
                               Icons.add,
@@ -228,16 +228,16 @@ void _bottomSheetMyChartsItem(BuildContext context) {
                             ),
                           ],
                         ),
-                      ),
-                      const Row(
-                        children: [
-                          Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 8, vertical: 2),
-                              child: Icon(Icons.navigate_next_rounded)),
-                        ],
-                      ),
-                    ],
+                        Row(
+                          children: [
+                            Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 8, vertical: 2),
+                                child: Icon(Icons.navigate_next_rounded)),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                   const Divider(height: 24),
                   const Row(

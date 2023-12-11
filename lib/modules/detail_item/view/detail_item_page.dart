@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:trading_app/modules/dialog/dialog_share_signal.dart';
 
 import '../../../gen/assets.gen.dart';
 import '../../../gen/colors.gen.dart';
@@ -105,17 +106,26 @@ void _bottomSheetitem(BuildContext context) {
                       ),
                       Row(
                         children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              color: ColorName.green,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: const Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 8, vertical: 2),
-                              child: Text(
-                                'Share Signal',
-                                style: TextStyle(color: ColorName.white),
+                          GestureDetector(
+                            onTap: () {
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) =>
+                                    const DialogShareSignal(),
+                              );
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: ColorName.green,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: const Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 8, vertical: 2),
+                                child: Text(
+                                  'Share Signal',
+                                  style: TextStyle(color: ColorName.white),
+                                ),
                               ),
                             ),
                           ),
@@ -167,7 +177,11 @@ class DetailItemPage extends StatelessWidget {
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: const Text('Detail Item'),
+        title: const Text(
+          'Detail Item',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Padding(

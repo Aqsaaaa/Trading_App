@@ -11,43 +11,23 @@ class NotificationPage extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(100.0),
-          child: AppBar(
-            elevation: 0,
-            backgroundColor: ColorName.white,
-            automaticallyImplyLeading: false,
-            flexibleSpace: Container(
-              decoration: const BoxDecoration(
-                color: ColorName.blue,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(16.0),
-                  bottomRight: Radius.circular(16.0),
-                ),
-              ),
-              child: const Padding(
-                padding: EdgeInsets.all(16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Column(
-                      children: [
-                        Text(
-                          'Notifications',
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                            color: ColorName.white,
-                          ),
-                        ),
-                        SizedBox(height: 12)
-                      ],
-                    ),
-                  ],
-                ),
-              ),
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: ColorName.white,
+          automaticallyImplyLeading: false,
+          title: const Text(
+            'Notification',
+            style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
             ),
+          ),
+          centerTitle: true,
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            },
           ),
         ),
         body: const Column(
@@ -91,5 +71,14 @@ class NotificationPage extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class SearchFilterWidget extends StatelessWidget {
+  const SearchFilterWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
