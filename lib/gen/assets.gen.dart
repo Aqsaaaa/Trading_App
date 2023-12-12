@@ -180,6 +180,10 @@ class $AssetsImagesGen {
   AssetGenImage get expiredSignal =>
       const AssetGenImage('assets/images/expired_signal.png');
 
+  /// File path: assets/images/forbidden_signal.png
+  AssetGenImage get forbiddenSignal =>
+      const AssetGenImage('assets/images/forbidden_signal.png');
+
   /// File path: assets/images/landing1.png
   AssetGenImage get landing1 =>
       const AssetGenImage('assets/images/landing1.png');
@@ -225,6 +229,7 @@ class $AssetsImagesGen {
         examplePhoto,
         exampleSelfie,
         expiredSignal,
+        forbiddenSignal,
         landing1,
         landing2,
         landing3,

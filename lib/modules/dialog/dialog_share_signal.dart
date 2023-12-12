@@ -134,8 +134,12 @@ class _DialogShareSignalState extends State<DialogShareSignal> {
                         const Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            SizedBox(width: 90, child: Text('Entry Price',
-                            style: TextStyle(fontWeight: FontWeight.bold),)),
+                            SizedBox(
+                                width: 90,
+                                child: Text(
+                                  'Entry Price',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                )),
                             SizedBox(width: 16),
                             Text('')
                           ],
@@ -147,6 +151,7 @@ class _DialogShareSignalState extends State<DialogShareSignal> {
                             const SizedBox(width: 90, child: Text('TP Price')),
                             const SizedBox(width: 16),
                             Container(
+                              height: 35,
                               width: 100,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(8),
@@ -154,7 +159,14 @@ class _DialogShareSignalState extends State<DialogShareSignal> {
                                     color: Colors.black26,
                                   )),
                               padding: const EdgeInsets.only(left: 8, right: 8),
-                              child: const Text('1930.00'),
+                              child: TextFormField(
+                                keyboardType: TextInputType.number,
+                                decoration: const InputDecoration(
+                                  border: InputBorder.none,
+                                  hintStyle: TextStyle(fontSize: 12),
+                                  hintText: 'Enter TP Price',
+                                ),
+                              ),
                             ),
                             const SizedBox(width: 2),
                             const Text('(+1000 Pips)')
@@ -167,15 +179,23 @@ class _DialogShareSignalState extends State<DialogShareSignal> {
                             const SizedBox(width: 90, child: Text('SL Price')),
                             const SizedBox(width: 16),
                             Container(
-                                width: 100,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
-                                    border: Border.all(
-                                      color: Colors.black26,
-                                    )),
-                                padding:
-                                    const EdgeInsets.only(left: 8, right: 8),
-                                child: const Text('XAAUSD')),
+                              height: 35,
+                              width: 100,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8),
+                                  border: Border.all(
+                                    color: Colors.black26,
+                                  )),
+                              padding: const EdgeInsets.only(left: 8, right: 8),
+                              child: TextFormField(
+                                keyboardType: TextInputType.number,
+                                decoration: const InputDecoration(
+                                  border: InputBorder.none,
+                                  hintStyle: TextStyle(fontSize: 12),
+                                  hintText: 'Enter SL price',
+                                ),
+                              ),
+                            ),
                             const SizedBox(width: 2),
                             const Text('(-1000 Pips)')
                           ],
@@ -199,8 +219,9 @@ class _DialogShareSignalState extends State<DialogShareSignal> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            SizedBox(width: 90, child: Text('Signal Price')),
-                            SizedBox(width: 16),
+                            const SizedBox(
+                                width: 90, child: Text('Signal Price')),
+                            const SizedBox(width: 16),
                             Container(
                               height: 35,
                               width: 130,
@@ -211,11 +232,10 @@ class _DialogShareSignalState extends State<DialogShareSignal> {
                                   )),
                               padding: const EdgeInsets.only(left: 8, right: 8),
                               child: TextFormField(
-                                // TODO: Implement logic to handle TP price input.
                                 keyboardType: TextInputType.number,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   border: InputBorder.none,
-                                  hintStyle: TextStyle(fontSize: 14),
+                                  hintStyle: TextStyle(fontSize: 12),
                                   hintText: 'Enter Signal price',
                                 ),
                               ),

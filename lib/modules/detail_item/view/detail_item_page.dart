@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:trading_app/modules/dialog/dialog_share_signal.dart';
+import 'package:trading_app/modules/personal_signal/view/personal_signal.dart';
 
 import '../../../gen/assets.gen.dart';
 import '../../../gen/colors.gen.dart';
 
 class ItemModal extends StatelessWidget {
-  const ItemModal({super.key});
+  final Image image;
+
+  const ItemModal({super.key, required this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +72,7 @@ class ItemModal extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(width: 8),
-                Assets.images.dangerSignal.image(height: 60)
+                image,
               ],
             ),
           ),
@@ -130,17 +133,27 @@ void _bottomSheetitem(BuildContext context) {
                             ),
                           ),
                           const SizedBox(width: 4),
-                          Container(
-                            decoration: BoxDecoration(
-                              color: ColorName.blue,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: const Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 8, vertical: 2),
-                              child: Text(
-                                'Provider',
-                                style: TextStyle(color: ColorName.white),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => const PersonalSignalPage(),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: ColorName.blue,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: const Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 8, vertical: 2),
+                                child: Text(
+                                  'Provider',
+                                  style: TextStyle(color: ColorName.white),
+                                ),
                               ),
                             ),
                           ),
@@ -149,9 +162,21 @@ void _bottomSheetitem(BuildContext context) {
                     ],
                   ),
                   const Divider(height: 24),
-                  const ItemModal(),
-                  const ItemModal(),
-                  const ItemModal(),
+                  ItemModal(
+                    image: Assets.images.sandSignal.image(),
+                  ),
+                  ItemModal(
+                    image: Assets.images.expiredSignal.image(),
+                  ),
+                  ItemModal(
+                    image: Assets.images.dangerSignal.image(),
+                  ),
+                  ItemModal(
+                    image: Assets.images.succesSignal.image(),
+                  ),
+                  ItemModal(
+                    image: Assets.images.forbiddenSignal.image(),
+                  ),
                 ],
               ),
             ],

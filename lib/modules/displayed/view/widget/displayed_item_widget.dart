@@ -60,9 +60,21 @@ void _bottomSheetitem(BuildContext context) {
                     ],
                   ),
                   const Divider(height: 24),
-                  const ItemModal(),
-                  const ItemModal(),
-                  const ItemModal(),
+                  ItemModal(
+                    image: Assets.images.sandSignal.image(),
+                  ),
+                  ItemModal(
+                    image: Assets.images.expiredSignal.image(),
+                  ),
+                  ItemModal(
+                    image: Assets.images.dangerSignal.image(),
+                  ),
+                  ItemModal(
+                    image: Assets.images.succesSignal.image(),
+                  ),
+                  ItemModal(
+                    image: Assets.images.forbiddenSignal.image(),
+                  ),
                 ],
               ),
             ],
