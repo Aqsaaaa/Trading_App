@@ -80,16 +80,12 @@ class _DialogShareSignalState extends State<DialogShareSignal> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'Will be expired on $selectedFormattedDate',
-                          style: const TextStyle(color: Colors.black54, fontSize: 12),
-                        ),
                         const Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             SizedBox(width: 90, child: Text('Chart ref')),
                             SizedBox(width: 16),
-                            Text('Market reversal')
+                            Text(': Market reversal')
                           ],
                         ),
                         const SizedBox(height: 4),
@@ -98,14 +94,14 @@ class _DialogShareSignalState extends State<DialogShareSignal> {
                           children: [
                             SizedBox(width: 90, child: Text('Pairs')),
                             SizedBox(width: 16),
-                            Text('XAAUSD')
+                            Text(': XAAUSD')
                           ],
                         ),
                         const SizedBox(height: 4),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            const SizedBox(width: 90, child: Text('Pairs')),
+                            const SizedBox(width: 90, child: Text('UA')),
                             const SizedBox(width: 16),
                             SizedBox(
                               height: 25,
@@ -143,15 +139,16 @@ class _DialogShareSignalState extends State<DialogShareSignal> {
                             const SizedBox(width: 90, child: Text('TP Price')),
                             const SizedBox(width: 16),
                             Container(
-                                width: 100,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
-                                    border: Border.all(
-                                      color: Colors.black26,
-                                    )),
-                                padding: const EdgeInsets.only(left: 8, right: 8),
-                                child: const Text('1930.00')),
-                            const SizedBox(width: 16),
+                              width: 100,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8),
+                                  border: Border.all(
+                                    color: Colors.black26,
+                                  )),
+                              padding: const EdgeInsets.only(left: 8, right: 8),
+                              child: const Text('1930.00'),
+                            ),
+                            const SizedBox(width: 2),
                             const Text('(+1000 Pips)')
                           ],
                         ),
@@ -168,9 +165,10 @@ class _DialogShareSignalState extends State<DialogShareSignal> {
                                     border: Border.all(
                                       color: Colors.black26,
                                     )),
-                                padding: const EdgeInsets.only(left: 8, right: 8),
+                                padding:
+                                    const EdgeInsets.only(left: 8, right: 8),
                                 child: const Text('XAAUSD')),
-                            const SizedBox(width: 16),
+                            const SizedBox(width: 2),
                             const Text('(-1000 Pips)')
                           ],
                         ),
@@ -178,7 +176,8 @@ class _DialogShareSignalState extends State<DialogShareSignal> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            const SizedBox(width: 90, child: Text('Expired Time')),
+                            const SizedBox(
+                                width: 90, child: Text('Expired Time')),
                             const SizedBox(width: 16),
                             Text(selectedFormattedDate),
                             const SizedBox(width: 16),
@@ -195,6 +194,46 @@ class _DialogShareSignalState extends State<DialogShareSignal> {
                             SizedBox(width: 90, child: Text('Signal Price')),
                             SizedBox(width: 16),
                             Text('\$10')
+                          ],
+                        ),
+                        const SizedBox(height: 16),
+                        Row(
+                          children: [
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: ColorName.red,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: const Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 16, vertical: 2),
+                                  child: Text(
+                                    'Cancel',
+                                    style: TextStyle(color: ColorName.white),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 4),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: ColorName.blue,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: const Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 16, vertical: 2),
+                                  child: Text(
+                                    'Share',
+                                    style: TextStyle(color: ColorName.white),
+                                  ),
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                       ],

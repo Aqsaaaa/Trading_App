@@ -6,7 +6,10 @@ import '../../gen/assets.gen.dart';
 import '../../gen/colors.gen.dart';
 
 class WithdrawPage extends StatelessWidget {
-  const WithdrawPage({super.key});
+  WithdrawPage({super.key});
+
+  final formKey = GlobalKey<FormState>();
+  final moneyController = TextEditingController();
 
   List<Item> generateItems() {
     return [
@@ -124,6 +127,74 @@ class WithdrawPage extends StatelessWidget {
               )
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget _modalBottomSheet(BuildContext context) {
+    return Container(
+      height: 500.0,
+      padding: const EdgeInsets.all(16.0),
+      child: Form(
+        key: formKey,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Column(
+              children: [
+                _bankAccount(context, true, false),
+                TextFormField(
+                  controller: moneyController,
+                  keyboardType: TextInputType.number,
+                  decoration: const InputDecoration(labelText: 'Enter Amount'),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter an amount';
+                    }
+                    // Add additional validation if needed
+                    return null;
+                  },
+                ),
+              ],
+            ),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  // if (_formKey.currentState!.validate()) {
+                  //
+                  //   Navigator.of(context).pop();
+                  // }
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                      return const ConfirmWithdrawPage();
+                    }),
+                  );
+                },
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(ColorName.blue),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  padding: MaterialStateProperty.all<EdgeInsets>(
+                    const EdgeInsets.symmetric(
+                      vertical: 12,
+                    ),
+                  ),
+                ),
+                child: const Text(
+                  'Next',
+                  style: TextStyle(color: ColorName.white),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -446,81 +517,5 @@ Widget _withdrawHistory(BuildContext context) {
         ],
       )
     ],
-  );
-}
-
-Widget _modalBottomSheet(BuildContext context) {
-  final formKey = GlobalKey<FormState>();
-  TextEditingController moneyController = TextEditingController();
-
-  return GestureDetector(
-    onTap: () {
-      FocusScope.of(context).unfocus();
-    },
-    child: Container(
-      height: 500.0,
-      padding: const EdgeInsets.all(16.0),
-      child: Form(
-        key: formKey,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Column(
-              children: [
-                _bankAccount(context, true, false),
-                TextFormField(
-                  controller: moneyController,
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(labelText: 'Enter Amount'),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter an amount';
-                    }
-                    // Add additional validation if needed
-                    return null;
-                  },
-                ),
-              ],
-            ),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  // if (_formKey.currentState!.validate()) {
-                  //
-                  //   Navigator.of(context).pop();
-                  // }
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) {
-                      return const ConfirmWithdrawPage();
-                    }),
-                  );
-                },
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(ColorName.blue),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                  padding: MaterialStateProperty.all<EdgeInsets>(
-                    const EdgeInsets.symmetric(
-                      vertical: 12,
-                    ),
-                  ),
-                ),
-                child: const Text(
-                  'Next',
-                  style: TextStyle(color: ColorName.white),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
   );
 }
