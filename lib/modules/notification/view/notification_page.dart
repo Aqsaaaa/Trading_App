@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:trading_app/gen/colors.gen.dart';
 
-// part 'widget/displayed_item_widget.dart';
+import '../../../gen/assets.gen.dart';
+
+part 'widget/notification_item_widget.dart';
 
 class NotificationPage extends StatelessWidget {
   const NotificationPage({Key? key}) : super(key: key);
@@ -46,11 +48,20 @@ class NotificationPage extends StatelessWidget {
                 children: [
                   SingleChildScrollView(
                     child: Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [],
+                        children: [
+                          NotificationItemWidget(
+                            color: ColorName.lightBlue,
+                          ),
+                          NotificationItemWidget(
+                            color: ColorName.lightBlue,
+                          ),
+                          NotificationItemWidget(
+                            color: ColorName.white,
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -60,7 +71,17 @@ class NotificationPage extends StatelessWidget {
                           EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [],
+                        children: [
+                          NotificationItemWidget(
+                            color: ColorName.white,
+                          ),
+                          NotificationItemWidget(
+                            color: ColorName.white,
+                          ),
+                          NotificationItemWidget(
+                            color: ColorName.white,
+                          ),
+                        ],
                       ),
                     ),
                   ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:image_picker/image_picker.dart';
 import 'package:trading_app/gen/assets.gen.dart';
 import 'package:trading_app/gen/colors.gen.dart';
 import 'package:trading_app/modules/profile/view/profile_page.dart';
@@ -20,31 +21,45 @@ class VerificationPage extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Row(
-                children: [
-                  Assets.icon.camera.svg(),
-                  const SizedBox(width: 8),
-                  const Text(
-                    'Take Photo ID Card',
-                    style: TextStyle(
-                      color: ColorName.blue,
+              GestureDetector(
+                // onTap: () async {
+                //   final pickedFile = await ImagePicker()
+                //       .pickImage(source: ImageSource.gallery);
+                //   if (pickedFile != null) {}
+                // },
+                child: Row(
+                  children: [
+                    Assets.icon.camera.svg(),
+                    const SizedBox(width: 8),
+                    const Text(
+                      'Take Photo ID Card',
+                      style: TextStyle(
+                        color: ColorName.blue,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               const Divider(thickness: 1),
-              Row(
-                children: [
-                  Assets.icon.upload.svg(),
-                  const SizedBox(width: 8),
-                  const Text(
-                    'Upload Photo',
-                    style: TextStyle(
-                      color: ColorName.blue,
+              GestureDetector(
+                // onTap: () async {
+                //   final pickedFile =
+                //       await ImagePicker().pickImage(source: ImageSource.camera);
+                //   if (pickedFile != null) {}
+                // },
+                child: Row(
+                  children: [
+                    Assets.icon.upload.svg(),
+                    const SizedBox(width: 8),
+                    const Text(
+                      'Upload Photo',
+                      style: TextStyle(
+                        color: ColorName.blue,
+                      ),
                     ),
-                  ),
-                ],
-              ),
+                  ],
+                ),
+              )
             ],
           ),
         );

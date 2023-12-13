@@ -158,7 +158,7 @@ class WalletPage extends StatelessWidget {
                     ],
                     border: Border.all(color: ColorName.blue)),
                 padding: const EdgeInsets.all(16),
-                height: 250,
+                height: 200,
                 width: 100,
                 child: const Padding(
                   padding: EdgeInsets.all(6),
@@ -166,34 +166,84 @@ class WalletPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Deposit Total', style: TextStyle(fontSize: 20)),
-                      SizedBox(height: 8),
-                      Text(
-                        'Rp 1,000,000',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 32,
-                            color: ColorName.blue),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Deposit Total',
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold)),
+                          Text(
+                            'Rp 1,000,000',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: ColorName.blue),
+                          ),
+                        ],
                       ),
-                      SizedBox(height: 6),
                       Divider(
                         thickness: 1,
                         color: Colors.black,
                       ),
-                      SizedBox(height: 6),
-                      Text(
-                        'Earning Total',
-                        style: TextStyle(fontSize: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Earning Total',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            'Rp 500,000',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: ColorName.orange),
+                          ),
+                        ],
                       ),
-                      SizedBox(height: 6),
-                      Text(
-                        'Rp 500,000',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 32,
-                            color: ColorName.orange),
+                      Divider(
+                        thickness: 1,
+                        color: Colors.black,
                       ),
-                      SizedBox(height: 12),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Withdraw Total',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            'Rp 200,000',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: ColorName.blue),
+                          ),
+                        ],
+                      ),
+                      Divider(
+                        thickness: 1,
+                        color: Colors.black,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Subscribed Total',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            'Rp 700,000',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: ColorName.orange),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),
@@ -205,7 +255,7 @@ class WalletPage extends StatelessWidget {
                   const Text(
                     'History',
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 16,
                       fontWeight: FontWeight.w500,
                       color: Colors.black,
                     ),

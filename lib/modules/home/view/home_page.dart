@@ -87,66 +87,10 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Stack(
-          children: [
-            Container(
-              color: ColorName.blue,
-              height: 60,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const WalletPage(),
-                    ),
-                  );
-                },
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors
-                        .white, // Ganti dengan warna latar belakang yang diinginkan
-                    borderRadius: BorderRadius.circular(16.0),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 5,
-                        offset:
-                            const Offset(0, 2), // pergeseran bayangan ke bawah
-                      ),
-                    ],
-                  ),
-                  padding: const EdgeInsets.all(16),
-                  height: 90,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      _buildInfoItem(
-                          Assets.icon.wallet.svg(), 'Balance', '800'),
-                      const VerticalDivider(
-                        width: 5,
-                        thickness: 1,
-                        color: Colors.black,
-                      ),
-                      _buildInfoItem(
-                          Assets.icon.creditcard.svg(), 'Deposit', '500'),
-                      const VerticalDivider(
-                        width: 16,
-                        thickness: 1,
-                        color: Colors.black,
-                      ),
-                      _buildInfoItem(Assets.icon.coin.svg(), 'Earning', '300'),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            Padding(
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            child: Padding(
               padding: const EdgeInsets.only(
                   left: 16, right: 16, top: 100, bottom: 16),
               child: Column(
@@ -235,10 +179,10 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         'Education Channels',
                         style: TextStyle(
                           fontSize: 18.0,
@@ -246,13 +190,23 @@ class HomePage extends StatelessWidget {
                           color: Colors.black,
                         ),
                       ),
-                      SizedBox(height: 8),
-                      Text(
-                        'See All',
-                        style: TextStyle(
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.bold,
-                          color: ColorName.blue,
+                      const SizedBox(height: 8),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const SeeAllPage(),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'See All',
+                          style: TextStyle(
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.bold,
+                            color: ColorName.blue,
+                          ),
                         ),
                       ),
                     ],
@@ -293,10 +247,10 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         'Trading Event',
                         style: TextStyle(
                           fontSize: 18.0,
@@ -304,13 +258,23 @@ class HomePage extends StatelessWidget {
                           color: Colors.black,
                         ),
                       ),
-                      SizedBox(height: 8),
-                      Text(
-                        'See All',
-                        style: TextStyle(
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.bold,
-                          color: ColorName.blue,
+                      const SizedBox(height: 8),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const SeeAllPage(),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'See All',
+                          style: TextStyle(
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.bold,
+                            color: ColorName.blue,
+                          ),
                         ),
                       ),
                     ],
@@ -351,10 +315,10 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         'Broker Introduction',
                         style: TextStyle(
                           fontSize: 18.0,
@@ -362,13 +326,23 @@ class HomePage extends StatelessWidget {
                           color: Colors.black,
                         ),
                       ),
-                      SizedBox(height: 8),
-                      Text(
-                        'See All',
-                        style: TextStyle(
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.bold,
-                          color: ColorName.blue,
+                      const SizedBox(height: 8),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const SeeAllPage(),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'See All',
+                          style: TextStyle(
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.bold,
+                            color: ColorName.blue,
+                          ),
                         ),
                       ),
                     ],
@@ -406,10 +380,10 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         'Active user with their brokers',
                         style: TextStyle(
                           fontSize: 18.0,
@@ -417,13 +391,23 @@ class HomePage extends StatelessWidget {
                           color: Colors.black,
                         ),
                       ),
-                      SizedBox(height: 8),
-                      Text(
-                        'See All',
-                        style: TextStyle(
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.bold,
-                          color: ColorName.blue,
+                      const SizedBox(height: 8),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const SeeAllPage(),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'See All',
+                          style: TextStyle(
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.bold,
+                            color: ColorName.blue,
+                          ),
                         ),
                       ),
                     ],
@@ -549,8 +533,63 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+          Container(
+            color: ColorName.blue,
+            height: 60,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const WalletPage(),
+                  ),
+                );
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors
+                      .white, // Ganti dengan warna latar belakang yang diinginkan
+                  borderRadius: BorderRadius.circular(16.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 2,
+                      blurRadius: 5,
+                      offset:
+                          const Offset(0, 2), // pergeseran bayangan ke bawah
+                    ),
+                  ],
+                ),
+                padding: const EdgeInsets.all(16),
+                height: 90,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    _buildInfoItem(Assets.icon.wallet.svg(), 'Balance', '800'),
+                    const VerticalDivider(
+                      width: 5,
+                      thickness: 1,
+                      color: Colors.black,
+                    ),
+                    _buildInfoItem(
+                        Assets.icon.creditcard.svg(), 'Deposit', '500'),
+                    const VerticalDivider(
+                      width: 16,
+                      thickness: 1,
+                      color: Colors.black,
+                    ),
+                    _buildInfoItem(Assets.icon.coin.svg(), 'Earning', '300'),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

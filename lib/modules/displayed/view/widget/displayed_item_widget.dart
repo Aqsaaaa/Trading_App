@@ -26,32 +26,51 @@ void _bottomSheetitem(BuildContext context) {
                       ),
                       Row(
                         children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              color: ColorName.green,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: const Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 8, vertical: 2),
-                              child: Text(
-                                'Share Signal',
-                                style: TextStyle(color: ColorName.white),
+                          GestureDetector(
+                            onTap: () {
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) =>
+                                    const DialogShareSignal(),
+                              );
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: ColorName.green,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: const Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 8, vertical: 2),
+                                child: Text(
+                                  'Share Signal',
+                                  style: TextStyle(color: ColorName.white),
+                                ),
                               ),
                             ),
                           ),
                           const SizedBox(width: 4),
-                          Container(
-                            decoration: BoxDecoration(
-                              color: ColorName.blue,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: const Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 8, vertical: 2),
-                              child: Text(
-                                'Provider',
-                                style: TextStyle(color: ColorName.white),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => const PersonalSignalPage(),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: ColorName.blue,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: const Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 8, vertical: 2),
+                                child: Text(
+                                  'Provider',
+                                  style: TextStyle(color: ColorName.white),
+                                ),
                               ),
                             ),
                           ),

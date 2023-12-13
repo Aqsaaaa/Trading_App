@@ -17,6 +17,7 @@ class _DialogShareSignalState extends State<DialogShareSignal> {
   String SelectedShareOption = ''; // Variable to store the selected option
 
   DateTime selectedDateTime = DateTime.now();
+  TimeOfDay selectedTime = TimeOfDay.now();
   String selectedFormattedDate = '';
   String selectedOption = 'BUY';
 
@@ -39,6 +40,20 @@ class _DialogShareSignalState extends State<DialogShareSignal> {
         selectedDateTime = picked;
         selectedFormattedDate =
             DateFormat('dd MMM yyyy').format(selectedDateTime);
+      });
+    }
+  }
+
+  Future<void> _selectTime(BuildContext context) async {
+    final TimeOfDay? picked = await showTimePicker(
+      context: context,
+      initialTime: selectedTime,
+    );
+
+    // ignore: unrelated_type_equality_checks
+    if (picked != null && picked != selectedDateTime) {
+      setState(() {
+        selectedTime = picked;
       });
     }
   }
@@ -205,13 +220,28 @@ class _DialogShareSignalState extends State<DialogShareSignal> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             const SizedBox(
-                                width: 90, child: Text('Expired Time')),
+                                width: 90, child: Text('Expired Date')),
                             const SizedBox(width: 16),
                             Text(selectedFormattedDate),
                             const SizedBox(width: 16),
                             GestureDetector(
                               onTap: () => _selectDate(context),
-                              child: const Icon(Icons.calendar_month),
+                              child: const Icon(Icons.calendar_today_outlined),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 16),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            const SizedBox(
+                                width: 90, child: Text('Expired Time')),
+                            const SizedBox(width: 16),
+                            Text(selectedTime.format(context)),
+                            const SizedBox(width: 16),
+                            GestureDetector(
+                              onTap: () => _selectTime(context),
+                              child: const Icon(Icons.timer_sharp),
                             ),
                           ],
                         ),
@@ -246,7 +276,9 @@ class _DialogShareSignalState extends State<DialogShareSignal> {
                         Row(
                           children: [
                             GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.pop(context);
+                              },
                               child: Container(
                                 decoration: BoxDecoration(
                                   color: ColorName.red,
@@ -294,16 +326,3 @@ class _DialogShareSignalState extends State<DialogShareSignal> {
     );
   }
 }
-
-// SizedBox(
-//               width: double.infinity,
-//               child: ElevatedButton(
-//                 onPressed: () {
-//                   // Handle button press for Option 1
-//                   setState(() {
-//                     SelectedShareOption = '4 Weeks = 20';
-//                   });
-//                 },
-//                 child: const Text('4 Weeks = 20'),
-//               ),
-//             ),

@@ -161,6 +161,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/broker.png
   AssetGenImage get broker => const AssetGenImage('assets/images/broker.png');
 
+  /// File path: assets/images/chart_approve.png
+  AssetGenImage get chartApprove =>
+      const AssetGenImage('assets/images/chart_approve.png');
+
   /// File path: assets/images/charts.png
   AssetGenImage get charts => const AssetGenImage('assets/images/charts.png');
 
@@ -224,6 +228,7 @@ class $AssetsImagesGen {
         backgroundWallet,
         brokerDisplay,
         broker,
+        chartApprove,
         charts,
         dangerSignal,
         examplePhoto,

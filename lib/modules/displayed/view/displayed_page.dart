@@ -3,6 +3,8 @@ import 'package:trading_app/gen/colors.gen.dart';
 import 'package:trading_app/modules/detail_item/view/detail_item_page.dart';
 import 'package:trading_app/modules/dialog/dialog_confirm.dart';
 import 'package:trading_app/modules/dialog/dialog_filter.dart';
+import 'package:trading_app/modules/dialog/dialog_share_signal.dart';
+import 'package:trading_app/modules/personal_signal/view/personal_signal.dart';
 
 import '../../../gen/assets.gen.dart';
 
