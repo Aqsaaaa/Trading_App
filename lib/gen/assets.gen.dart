@@ -83,6 +83,9 @@ class $AssetsIconGen {
   SvgGenImage get pinpapercheck =>
       const SvgGenImage('assets/icon/pinpapercheck.svg');
 
+  /// File path: assets/icon/profile.svg
+  SvgGenImage get profile => const SvgGenImage('assets/icon/profile.svg');
+
   /// File path: assets/icon/signal.svg
   SvgGenImage get signal => const SvgGenImage('assets/icon/signal.svg');
 
@@ -132,6 +135,7 @@ class $AssetsIconGen {
         login,
         notification,
         pinpapercheck,
+        profile,
         signal,
         star,
         upload,

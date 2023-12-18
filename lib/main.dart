@@ -123,6 +123,11 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: router,
+      // theme: ThemeData(
+      //   textTheme: GoogleFonts.poppinsTextTheme(
+      //     Theme.of(context).textTheme,
+      //   ),
+      // ),
     );
   }
 }

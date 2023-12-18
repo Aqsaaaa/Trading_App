@@ -17,7 +17,7 @@ class DisplayedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 3,
       child: Scaffold(
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(100.0),
@@ -42,7 +42,7 @@ class DisplayedPage extends StatelessWidget {
                     Column(
                       children: [
                         Text(
-                          'Displayed Charts',
+                          'Charts',
                           style: TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,
@@ -62,6 +62,7 @@ class DisplayedPage extends StatelessWidget {
           children: [
             TabBar(
               tabs: [
+                Tab(text: 'All Charts'),
                 Tab(text: 'Subsriptions'),
                 Tab(text: 'My Charts'),
               ],
@@ -72,6 +73,22 @@ class DisplayedPage extends StatelessWidget {
             Expanded(
               child: TabBarView(
                 children: [
+                  SingleChildScrollView(
+                    child: Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          DisplayedSearchFilterWidget(),
+                          SizedBox(height: 8),
+                          DisplayedAllChartsItemWidget(),
+                          DisplayedChartsItemWidget(),
+                          DisplayedChartsMyItemWidget(),
+                        ],
+                      ),
+                    ),
+                  ),
                   SingleChildScrollView(
                     child: Padding(
                       padding:

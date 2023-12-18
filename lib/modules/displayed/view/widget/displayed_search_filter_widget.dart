@@ -9,6 +9,47 @@ class DisplayedSearchFilterWidget extends StatelessWidget {
       children: [
         Row(
           children: [
+            Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  color: ColorName.white,
+                  border: Border.all(color: ColorName.blue)),
+              child: IconButton(
+                icon: const Icon(
+                  Icons.filter_list_outlined,
+                  color: Colors.blue,
+                ),
+                onPressed: () {
+                  showMenu(
+                    context: context,
+                    position: const RelativeRect.fromLTRB(0, 200, 0, 0),
+                    items: [
+                      const PopupMenuItem<String>(
+                        value: 'Indices',
+                        child: Text('Indices'),
+                      ),
+                      const PopupMenuItem<String>(
+                        value: 'Indices Future',
+                        child: Text('Indices Future'),
+                      ),
+                      const PopupMenuItem<String>(
+                        value: 'Stocks',
+                        child: Text('Stocks'),
+                      ),
+                      const PopupMenuItem<String>(
+                        value: 'Commodities',
+                        child: Text('Commodities'),
+                      ),
+                      const PopupMenuItem<String>(
+                        value: 'Currencies',
+                        child: Text('Currencies'),
+                      ),
+                    ],
+                  );
+                },
+              ),
+            ),
+            const SizedBox(width: 8),
             Expanded(
               child: Container(
                 decoration: BoxDecoration(

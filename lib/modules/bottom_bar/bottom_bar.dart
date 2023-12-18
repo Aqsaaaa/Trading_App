@@ -2,10 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:trading_app/modules/help_desk/help_desk_page.dart';
+import 'package:trading_app/modules/profile/view/profile_page.dart';
 import 'package:trading_app/modules/signal/view/signal_page.dart';
 
 import '../../gen/assets.gen.dart';
-import '../charts/view/charts_page.dart';
 import '../displayed/view/displayed_page.dart';
 import '../home/view/home_page.dart';
 
@@ -21,10 +21,10 @@ class _BottomBarState extends State<BottomBar> {
   int _currentIndex = 0;
   final List<Widget> _pages = [
     const HomePage(),
-    const ChartsPage(),
     const DisplayedPage(),
     const SignalPage(),
     const HelpDeskPage(),
+    const ProfilePage(),
   ];
 
   @override
@@ -48,31 +48,31 @@ class _BottomBarState extends State<BottomBar> {
           ),
           BottomNavigationBarItem(
             icon: _currentIndex == 1
-                ? Assets.icon.allCharts.svg(color: Colors.orange)
-                : Assets.icon.allCharts.svg(color: Colors.grey),
-            label: 'All Charts',
-            activeIcon: Assets.icon.allCharts.svg(color: Colors.orange),
-          ),
-          BottomNavigationBarItem(
-            icon: _currentIndex == 2
                 ? Assets.icon.displayed.svg(color: Colors.orange)
                 : Assets.icon.displayed.svg(color: Colors.grey),
-            label: 'Displayed',
+            label: 'All Charts',
             activeIcon: Assets.icon.displayed.svg(color: Colors.orange),
           ),
           BottomNavigationBarItem(
-            icon: _currentIndex == 3
+            icon: _currentIndex == 2
                 ? Assets.icon.signal.svg(color: Colors.orange)
                 : Assets.icon.signal.svg(color: Colors.grey),
             label: 'Signal',
             activeIcon: Assets.icon.signal.svg(color: Colors.orange),
           ),
           BottomNavigationBarItem(
-            icon: _currentIndex == 4
+            icon: _currentIndex == 3
                 ? Assets.icon.helpdesk.svg(color: Colors.orange)
                 : Assets.icon.helpdesk.svg(color: Colors.grey),
-            label: 'helpdesk',
+            label: 'Help Desk',
             activeIcon: Assets.icon.helpdesk.svg(color: Colors.orange),
+          ),
+          BottomNavigationBarItem(
+            icon: _currentIndex == 4
+                ? Assets.icon.profile.svg(color: Colors.orange)
+                : Assets.icon.profile.svg(color: Colors.grey),
+            label: 'Profile',
+            activeIcon: Assets.icon.profile.svg(color: Colors.orange),
           ),
         ],
       ),

@@ -36,8 +36,8 @@ class NotificationPage extends StatelessWidget {
           children: [
             TabBar(
               tabs: [
-                Tab(text: 'Recent'),
-                Tab(text: 'Previous'),
+                Tab(text: 'Financing'),
+                Tab(text: 'Charts & Signals'),
               ],
               indicatorColor: ColorName.blue,
               unselectedLabelColor: Colors.grey,

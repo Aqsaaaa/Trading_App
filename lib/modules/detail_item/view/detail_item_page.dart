@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:trading_app/modules/dialog/dialog_share_signal.dart';
 import 'package:trading_app/modules/personal_signal/view/personal_signal.dart';
 
 import '../../../gen/assets.gen.dart';
 import '../../../gen/colors.gen.dart';
+
+part '../widget/bottom_sheet.dart';
 
 class ItemModal extends StatelessWidget {
   final Image image;
@@ -83,110 +86,6 @@ class ItemModal extends StatelessWidget {
   }
 }
 
-void _bottomSheetitem(BuildContext context) {
-  showModalBottomSheet(
-    shape: const RoundedRectangleBorder(
-      borderRadius: BorderRadius.vertical(
-        top: Radius.circular(12),
-      ),
-    ),
-    context: context,
-    builder: (BuildContext context) {
-      return SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text(
-                        'Chart ref: FX Power',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      Row(
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              showDialog(
-                                context: context,
-                                builder: (BuildContext context) =>
-                                    const DialogShareSignal(),
-                              );
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: ColorName.green,
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: const Padding(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 8, vertical: 2),
-                                child: Text(
-                                  'Share Signal',
-                                  style: TextStyle(color: ColorName.white),
-                                ),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: 4),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (_) => const PersonalSignalPage(),
-                                ),
-                              );
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: ColorName.blue,
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: const Padding(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 8, vertical: 2),
-                                child: Text(
-                                  'Provider',
-                                  style: TextStyle(color: ColorName.white),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  const Divider(height: 24),
-                  ItemModal(
-                    image: Assets.images.sandSignal.image(),
-                  ),
-                  ItemModal(
-                    image: Assets.images.expiredSignal.image(),
-                  ),
-                  ItemModal(
-                    image: Assets.images.dangerSignal.image(),
-                  ),
-                  ItemModal(
-                    image: Assets.images.succesSignal.image(),
-                  ),
-                  ItemModal(
-                    image: Assets.images.forbiddenSignal.image(),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      );
-    },
-  );
-}
-
 class DetailItemPage extends StatelessWidget {
   const DetailItemPage({Key? key}) : super(key: key);
 
@@ -207,6 +106,33 @@ class DetailItemPage extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
+      ),
+      floatingActionButton: SpeedDial(
+        animatedIcon: AnimatedIcons.menu_close,
+        children: [
+          SpeedDialChild(
+            child: const Icon(Icons.menu_book_outlined),
+            label: 'Tutorial',
+            onTap: () {
+              _bottomSheetitem(context);
+            },
+          ),
+          SpeedDialChild(
+            child: const Icon(Icons.share),
+            label: 'share signal',
+            onTap: () {
+              _bottomSheetFormType(context);
+              
+            },
+          ),
+          SpeedDialChild(
+            child: const Icon(Icons.remove_red_eye_outlined),
+            label: 'view signal',
+            onTap: () {
+              _bottomSheetitem(context);
+            },
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -314,21 +240,10 @@ class DetailItemPage extends StatelessWidget {
                       Assets.icon.star.svg(),
                       const SizedBox(width: 4),
                       const Text('5.0'),
-                    ],
-                  ),
-                  Row(
-                    children: [
+                      const SizedBox(width: 20),
                       const Text('BT : 80% | FT : 80% | ',
                           style: TextStyle(color: ColorName.blue)),
-                      GestureDetector(
-                        onTap: () {
-                          _bottomSheetitem(context);
-                        },
-                        child: Row(children: [
-                          Assets.icon.signal.svg(),
-                          const Text('signals'),
-                        ]),
-                      )
+                      const SizedBox(width: 20),
                     ],
                   ),
                 ],
