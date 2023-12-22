@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
-import 'package:trading_app/modules/dialog/dialog_share_signal.dart';
+import 'package:trading_app/widgets/dialog/dialog_share_signal.dart';
 import 'package:trading_app/modules/personal_signal/view/personal_signal.dart';
 
 import '../../../gen/assets.gen.dart';
 import '../../../gen/colors.gen.dart';
 
-part '../widget/bottom_sheet.dart';
+part 'widget/bottom_sheet.dart';
 
 class ItemModal extends StatelessWidget {
   final Image image;
@@ -87,7 +87,10 @@ class ItemModal extends StatelessWidget {
 }
 
 class DetailItemPage extends StatelessWidget {
-  const DetailItemPage({Key? key}) : super(key: key);
+  const DetailItemPage({Key? key, this.color, this.status}) : super(key: key);
+
+  final Color? color;
+  final String? status;
 
   @override
   Widget build(BuildContext context) {
@@ -95,6 +98,11 @@ class DetailItemPage extends StatelessWidget {
       appBar: AppBar(
         leading: GestureDetector(
           onTap: () {
+            if (MediaQuery.of(context).orientation == Orientation.landscape) {
+              SystemChrome.setPreferredOrientations([
+                DeviceOrientation.portraitUp,
+              ]);
+            }
             Navigator.pop(context);
           },
           child: const Icon(Icons.arrow_back_rounded, color: Colors.black),
@@ -122,7 +130,6 @@ class DetailItemPage extends StatelessWidget {
             label: 'share signal',
             onTap: () {
               _bottomSheetFormType(context);
-              
             },
           ),
           SpeedDialChild(
@@ -173,15 +180,15 @@ class DetailItemPage extends StatelessWidget {
                         onTap: () {},
                         child: Container(
                           decoration: BoxDecoration(
-                            color: ColorName.blue,
+                            color: color ?? ColorName.blue,
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          child: const Padding(
-                            padding: EdgeInsets.symmetric(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
                                 horizontal: 12, vertical: 4),
                             child: Text(
-                              'Subscribe',
-                              style: TextStyle(color: ColorName.white),
+                              status ?? 'Subscribe',
+                              style: const TextStyle(color: ColorName.white),
                             ),
                           ),
                         ),

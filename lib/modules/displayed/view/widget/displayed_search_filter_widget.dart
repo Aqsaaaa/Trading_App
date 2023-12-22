@@ -16,7 +16,7 @@ class DisplayedSearchFilterWidget extends StatelessWidget {
                   border: Border.all(color: ColorName.blue)),
               child: IconButton(
                 icon: const Icon(
-                  Icons.filter_list_outlined,
+                  Icons.menu,
                   color: Colors.blue,
                 ),
                 onPressed: () {
@@ -24,6 +24,19 @@ class DisplayedSearchFilterWidget extends StatelessWidget {
                     context: context,
                     position: const RelativeRect.fromLTRB(0, 200, 0, 0),
                     items: [
+                      PopupMenuItem<String>(
+                        value: 'Add Charts',
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => const AddChartsPage(),
+                                ));
+                          },
+                          child: const Text('Add Charts'),
+                        ),
+                      ),
                       const PopupMenuItem<String>(
                         value: 'Indices',
                         child: Text('Indices'),

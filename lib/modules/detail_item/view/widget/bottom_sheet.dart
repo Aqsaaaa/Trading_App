@@ -1,4 +1,4 @@
-part of '../view/detail_item_page.dart';
+part of '../detail_item_page.dart';
 
 void _bottomSheetitem(BuildContext context) {
   showModalBottomSheet(
@@ -290,29 +290,3 @@ void _bottomSheetFormSignalPrice(BuildContext context) {
     },
   );
 }
-
-// void _bottomSheetFormExpiry(BuildContext context) {
-//   showModalBottomSheet(
-//     shape: const RoundedRectangleBorder(
-//       borderRadius: BorderRadius.vertical(
-//         top: Radius.circular(12),
-//       ),
-//     ),
-//     context: context,
-//     builder: (BuildContext context) {
-//       return const SingleChildScrollView(
-//         child: Padding(
-//           padding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
-//           child: Column(
-//             mainAxisSize: MainAxisSize.min,
-//             children: [
-//               Column(
-//                 children: [],
-//               ),
-//             ],
-//           ),
-//         ),
-//       );
-//     },
-//   );
-// }

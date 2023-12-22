@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trading_app/modules/expansion_panel/expansion_panel.dart';
+import 'package:trading_app/widgets/expansion_panel/expansion_panel.dart';
 import 'package:trading_app/modules/withdraw/confirm_withdraw_page.dart';
 
 import '../../gen/assets.gen.dart';

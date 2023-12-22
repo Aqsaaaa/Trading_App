@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:trading_app/gen/colors.gen.dart';
 import 'package:trading_app/modules/detail_item/view/detail_item_page.dart';
-import 'package:trading_app/modules/dialog/dialog_confirm.dart';
-import 'package:trading_app/modules/dialog/dialog_filter.dart';
-import 'package:trading_app/modules/dialog/dialog_share_signal.dart';
+import 'package:trading_app/widgets/dialog/dialog_confirm.dart';
+import 'package:trading_app/widgets/dialog/dialog_filter.dart';
+import 'package:trading_app/widgets/dialog/dialog_option_button.dart';
+import 'package:trading_app/widgets/dialog/dialog_share_signal.dart';
+import 'package:trading_app/modules/notification/view/notification_page.dart';
 import 'package:trading_app/modules/personal_signal/view/personal_signal.dart';
+import 'package:trading_app/modules/profile/view/add_charts_page.dart';
 
 import '../../../gen/assets.gen.dart';
 
@@ -33,23 +36,74 @@ class DisplayedPage extends StatelessWidget {
                   bottomRight: Radius.circular(16.0),
                 ),
               ),
-              child: const Padding(
-                padding: EdgeInsets.all(16),
+              child: Padding(
+                padding: const EdgeInsets.all(16),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Column(
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          'Charts',
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                            color: ColorName.white,
+                        const Row(
+                          children: [
+                            Icon(
+                              Icons.crisis_alert,
+                              color: ColorName.white,
+                              size: 50,
+                            ),
+                            SizedBox(width: 8),
+                            Text(
+                              'Trading App',
+                              style: TextStyle(
+                                  color: ColorName.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold),
+                            )
+                            // ClipOval(
+                            //   child: Assets.images.prodile.image(),
+                            // ),
+                            // const SizedBox(width: 8),
+                            // GestureDetector(
+                            //   onTap: () {
+                            //     Navigator.push(
+                            //       context,
+                            //       MaterialPageRoute(
+                            //         builder: (_) => const ProfilePage(),
+                            //       ),
+                            //     );
+                            //   },
+                            //   child: const Column(
+                            //     children: [
+                            //       Text(
+                            //         'Hi, Welcome Back!',
+                            //         style: TextStyle(
+                            //           fontSize: 16.0,
+                            //           color: ColorName.white,
+                            //         ),
+                            //       ),
+                            //       SizedBox(width: 8.0),
+                            //       Text(
+                            //         'Ahmad Solikin',
+                            //         style: TextStyle(
+                            //           fontSize: 20.0,
+                            //           fontWeight: FontWeight.bold,
+                            //           color: ColorName.white,
+                            //         ),
+                            //       ),
+                            //     ],
+                            //   ),
+                            // ),
+                          ],
+                        ),
+                        IconButton(
+                          icon: Assets.icon.notification.svg(),
+                          onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => const NotificationPage()),
                           ),
                         ),
-                        SizedBox(height: 12)
                       ],
                     ),
                   ],
@@ -82,8 +136,14 @@ class DisplayedPage extends StatelessWidget {
                         children: [
                           DisplayedSearchFilterWidget(),
                           SizedBox(height: 8),
-                          DisplayedAllChartsItemWidget(),
-                          DisplayedChartsItemWidget(),
+                          DisplayedChartsItemWidget(
+                            status: 'Subscribe',
+                            color: ColorName.blue,
+                          ),
+                          DisplayedChartsItemWidget(
+                            status: 'Subscribe',
+                            color: ColorName.blue,
+                          ),
                           DisplayedChartsMyItemWidget(),
                         ],
                       ),
@@ -98,10 +158,22 @@ class DisplayedPage extends StatelessWidget {
                         children: [
                           DisplayedSearchFilterWidget(),
                           SizedBox(height: 8),
-                          DisplayedChartsItemWidget(),
-                          DisplayedChartsItemWidget(),
-                          DisplayedChartsItemWidget(),
-                          DisplayedChartsItemWidget(),
+                          DisplayedChartsItemWidget(
+                            status: 'Unsubscribe',
+                            color: ColorName.red,
+                          ),
+                          DisplayedChartsItemWidget(
+                            status: 'Unsubscribe',
+                            color: ColorName.red,
+                          ),
+                          DisplayedChartsItemWidget(
+                            status: 'Unsubscribe',
+                            color: ColorName.red,
+                          ),
+                          DisplayedChartsItemWidget(
+                            status: 'Unsubscribe',
+                            color: ColorName.red,
+                          ),
                         ],
                       ),
                     ),

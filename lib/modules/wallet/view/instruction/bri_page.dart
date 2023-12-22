@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trading_app/gen/colors.gen.dart';
-import 'package:trading_app/modules/expansion_panel/expansion_panel.dart';
+import 'package:trading_app/widgets/expansion_panel/expansion_panel.dart';
 
 import '../../../../gen/assets.gen.dart';
 

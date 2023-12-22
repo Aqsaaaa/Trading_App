@@ -12,7 +12,7 @@ class ChartsItemWidget extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) => const DetailItemPage(),
+                builder: (_) => const DetailItemPage(color: ColorName.blue, status: 'Subscribe',),
               ),
             );
           },

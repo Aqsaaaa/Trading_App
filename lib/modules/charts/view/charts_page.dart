@@ -3,10 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:trading_app/gen/colors.gen.dart';
 import 'package:trading_app/modules/detail_item/view/detail_item_page.dart';
-import 'package:trading_app/modules/dialog/dialog_filter.dart';
+import 'package:trading_app/widgets/dialog/dialog_filter.dart';
 
 import '../../../gen/assets.gen.dart';
-import '../../dialog/dialog_option_button.dart';
+import '../../../widgets/dialog/dialog_option_button.dart';
 
 part 'widgets/charts_item_widget.dart';
 part 'widgets/search_filter_widget.dart';

@@ -1,5 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:trading_app/gen/assets.gen.dart';
+import 'package:trading_app/modules/home/view/see_all_page.dart';
 
 import '../../gen/colors.gen.dart';
 
@@ -42,6 +44,73 @@ class ExpandableMenu extends StatelessWidget {
                 ),
               )
             ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                'Education Channels',
+                style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
+              const SizedBox(height: 8),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const SeeAllPage(),
+                    ),
+                  );
+                },
+                child: const Text(
+                  'See All',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.bold,
+                    color: ColorName.blue,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 16),
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                blurRadius: 2,
+                offset: const Offset(0, 2),
+              ),
+            ],
+          ),
+          padding: const EdgeInsets.all(16),
+          height: 200,
+          width: 400,
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                _educationChanel('Forex trading for beginner (full course)',
+                    Assets.images.youtube.image(width: 250)),
+                const SizedBox(width: 20),
+                _educationChanel('Forex trading for beginner (full course)',
+                    Assets.images.youtube.image(width: 250)),
+                const SizedBox(width: 20),
+                _educationChanel('Forex trading for beginner (full course)',
+                    Assets.images.youtube.image(width: 250)),
+              ],
+            ),
           ),
         ),
         const Divider(height: 0),
@@ -99,4 +168,28 @@ class ExpandableMenu extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget _educationChanel(String title, Image video) {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      video,
+      const SizedBox(height: 10),
+      Flexible(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 14.0,
+                color: Colors.black,
+              ),
+            ),
+          ],
+        ),
+      ),
+    ],
+  );
 }

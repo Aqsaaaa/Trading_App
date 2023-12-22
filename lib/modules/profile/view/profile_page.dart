@@ -1,7 +1,5 @@
-// ignore_for_file: deprecated_member_use_from_same_package
-
 import 'package:flutter/material.dart';
-import 'package:trading_app/modules/profile/view/add_charts_page.dart';
+import 'package:trading_app/modules/notification/view/notification_page.dart';
 import 'package:trading_app/modules/profile/view/change_password_page.dart';
 import 'package:trading_app/modules/profile/view/my_account_page.dart';
 import 'package:trading_app/modules/profile/view/my_charts_list_page.dart';
@@ -17,34 +15,100 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorName.blue,
-      appBar: AppBar(
-        backgroundColor: ColorName.blue,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.white,
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(100.0),
+        child: AppBar(
+          elevation: 0,
+          backgroundColor: ColorName.white,
+          automaticallyImplyLeading: false,
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              color: ColorName.blue,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(16.0),
+                bottomRight: Radius.circular(16.0),
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Row(
+                        children: [
+                          Icon(
+                            Icons.crisis_alert,
+                            color: ColorName.white,
+                            size: 50,
+                          ),
+                          SizedBox(width: 8),
+                          Text(
+                            'Trading App',
+                            style: TextStyle(
+                                color: ColorName.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+                          )
+                          // ClipOval(
+                          //   child: Assets.images.prodile.image(),
+                          // ),
+                          // const SizedBox(width: 8),
+                          // GestureDetector(
+                          //   onTap: () {
+                          //     Navigator.push(
+                          //       context,
+                          //       MaterialPageRoute(
+                          //         builder: (_) => const ProfilePage(),
+                          //       ),
+                          //     );
+                          //   },
+                          //   child: const Column(
+                          //     children: [
+                          //       Text(
+                          //         'Hi, Welcome Back!',
+                          //         style: TextStyle(
+                          //           fontSize: 16.0,
+                          //           color: ColorName.white,
+                          //         ),
+                          //       ),
+                          //       SizedBox(width: 8.0),
+                          //       Text(
+                          //         'Ahmad Solikin',
+                          //         style: TextStyle(
+                          //           fontSize: 20.0,
+                          //           fontWeight: FontWeight.bold,
+                          //           color: ColorName.white,
+                          //         ),
+                          //       ),
+                          //     ],
+                          //   ),
+                          // ),
+                        ],
+                      ),
+                      IconButton(
+                        icon: Assets.icon.notification.svg(),
+                        onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => const NotificationPage()),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ),
-          onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
-          'Profile',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Container(
           decoration: const BoxDecoration(
             color: ColorName.white,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20),
-              topRight: Radius.circular(20),
-            ),
           ),
           child: Padding(
             padding: const EdgeInsets.all(16),
@@ -71,38 +135,38 @@ class ProfilePage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 12),
-                InkWell(
-                  onTap: () {
-                    // Add your button action here
-                  },
-                  child: Container(
-                    width: double.infinity,
-                    height: 45,
-                    decoration: BoxDecoration(
-                      image: const DecorationImage(
-                        image:
-                            AssetImage('assets/images/background wallet.png'),
-                        fit: BoxFit.cover,
-                      ),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Center(
-                      child: GestureDetector(
-                        onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (_) => const AddChartsPage())),
-                        child: const Text(
-                          '+  Add Chart List',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+                // InkWell(
+                //   onTap: () {
+                //     // Add your button action here
+                //   },
+                //   child: Container(
+                //     width: double.infinity,
+                //     height: 45,
+                //     decoration: BoxDecoration(
+                //       image: const DecorationImage(
+                //         image:
+                //             AssetImage('assets/images/background wallet.png'),
+                //         fit: BoxFit.cover,
+                //       ),
+                //       borderRadius: BorderRadius.circular(10),
+                //     ),
+                //     child: Center(
+                //       child: GestureDetector(
+                //         onTap: () => Navigator.push(
+                //             context,
+                //             MaterialPageRoute(
+                //                 builder: (_) => const AddChartsPage())),
+                //         child: const Text(
+                //           '+  Add Chart List',
+                //           style: TextStyle(
+                //             color: Colors.white,
+                //             fontSize: 16,
+                //           ),
+                //         ),
+                //       ),
+                //     ),
+                //   ),
+                // ),
                 const SizedBox(height: 20),
                 const Text(
                   'Account',
@@ -193,6 +257,7 @@ class ProfilePage extends StatelessWidget {
                   children: [
                     Row(
                       children: [
+                        // ignore: deprecated_member_use_from_same_package
                         Assets.icon.coin.svg(color: Colors.black45),
                         const SizedBox(width: 8),
                         const Text(

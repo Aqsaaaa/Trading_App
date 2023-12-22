@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trading_app/gen/assets.gen.dart';
 import 'package:trading_app/gen/colors.gen.dart';
-import 'package:trading_app/modules/dialog/dialog_option_button.dart';
+import 'package:trading_app/widgets/dialog/dialog_option_button.dart';
 
 import '../../detail_item/view/detail_item_page.dart';
 
